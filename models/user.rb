@@ -4,15 +4,18 @@ require 'scrypt'
 class User
   include DataMapper::Resource
 
-  property :id,     Serial
+  property :id,         Serial
 
-  property :email,  String, length: 255
+  property :email,      String, length: 255
   property :crypt_pass, String, length: 96, accessor: :protected
   property :salt,       String, length: 32, accessor: :protected
+
+  property :role,       Enum[:admin, :police, :shop]
 
   timestamps :at
 
   validates_presence_of :username
+  validates_presence_of :role
 
   attr_accessor :password, :password_confirmation
   validates_presence_of :password, if: lambda { |u| !(u.has_password?) }, message: "Please provide a password for your account."
