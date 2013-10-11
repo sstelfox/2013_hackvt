@@ -1,11 +1,11 @@
 class Bike
   include DataMapper::Resource
 
-  property :id,     Serial
+  property :id, Serial
 
   property :serial,           String , length: 255
-  property :frame_make,             String , length: 255
-  property :frame_model,            String , length: 255
+  property :frame_make,       String , length: 255
+  property :frame_model,      String , length: 255
   property :size,             String , length: 255
   property :color,            String , length: 255
   property :status,           String , length: 255
@@ -17,6 +17,12 @@ class Bike
   property :owner_phone,      String , length: 255
 
   timestamps :at
+
+  validates_within :status, set: status_set
+
+  def status_set
+   %w{ normal stolen found }
+  end
 
 end
 
