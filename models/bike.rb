@@ -4,8 +4,8 @@ class Bike
   property :id,     Serial
 
   property :serial,           String , length: 255
-  property :make,             String , length: 255
-  property :model,            String , length: 255
+  property :frame_make,             String , length: 255
+  property :frame_model,            String , length: 255
   property :size,             String , length: 255
   property :color,            String , length: 255
   property :status,           String , length: 255
