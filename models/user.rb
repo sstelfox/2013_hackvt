@@ -22,7 +22,7 @@ class User
   end
 
   def calc_hash(pass)
-    SCrypt::Engine.scrypt(pass, salt, SCrypt::Engine.autodetect_cost(salt, 32).unpack('H*').first
+    SCrypt::Engine.scrypt(pass, salt, SCrypt::Engine.autodetect_cost(salt), 32).unpack('H*').first
   end
 
   def generate_salt
