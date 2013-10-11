@@ -26,6 +26,43 @@
 * Users can "find" a bike
 * Map showing theft locations and  locations of found bikes
 
+## IA / Sections
+
+* Phase 1
+** Request Account Page
+** Login Page
+*** Search / Filter Bikes Page (for cops + shops)
+*** Report Stolen Bike Form (for cops)
+*** Register Sold Bike Pages (for shops)
+*** User Management Page
+* Phase 2
+** Map Page
+** Report Stolen Bike
+** Report Found Bike
+
+## Data Models
+
+* User
+** Type
+** First name
+** Last name
+** Email
+** Phone
+* Bike
+** Serial
+** Make 
+** Model
+** Size
+** Color
+** Status (Found/Normal/Stolen)
+** Location Found
+** Location Stolen
+** Owner info
+*** First name
+*** Last name
+*** Email
+*** Phone
+
 ## Data Sources
 
 * TODO :godmode:
@@ -36,5 +73,4 @@
 * http://www.localmotion.org/bikeregistry
 * http://www.police.ci.burlington.vt.us/LeadinHtml_VtBurlingtonPd/start-report.html
 * http://stolenbicycleregistry.com/
-
 
