@@ -34,10 +34,19 @@ class User
     (crypt_hash == calc_hash(pass))
   end
   
+  # Checks whether the user instance has a password, primarily used as part of
+  # the validation on the password.
+  #
+  # @return [Boolean]
   def has_password?
     (!!crypt_pass && !!salt)
   end
 
+  # Handles changing the user's password, updating the salt, as well as the
+  # hash.
+  #
+  # @param [String] pass The password to set
+  # @return [void]
   def password=(pass)
     @password = pass
     generate_salt
@@ -46,10 +55,17 @@ class User
 
   protected
 
+  # Calculate the hash for the provided string and return it.
+  #
+  # @param [String] pass The string to hash
+  # @return [String] A valid hash
   def calc_hash(pass)
     SCrypt::Engine.scrypt(pass, salt, SCrypt::Engine.autodetect_cost(salt), 32).unpack('H*').first
   end
 
+  # Generate a new salt for use in password hashing.
+  #
+  # @return [String] The new salt
   def generate_salt
     self.salt = SCrypt::Engine.generate_salt(max_time: 0.75)
   end
