@@ -1,5 +1,12 @@
 # Fathomless Twilight
 
+## Team IPs:
+
+* Gabe: 192.168.8.131 
+* Sam: 192.168.8.122
+* Jared: 192.168.8.
+* Zach: 192.168.8.141
+
 ## Features:
 
 ### Phase 1 -- Shops and Cops
