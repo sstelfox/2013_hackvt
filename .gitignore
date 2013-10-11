@@ -2,4 +2,4 @@
 tmp/
 *.swp
 doc/
-
+.DS_Store
