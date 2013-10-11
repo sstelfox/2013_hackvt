@@ -1,6 +1,8 @@
 class Bike
   include DataMapper::Resource
 
+  STATUS_SET = %w{ normal stolen found }
+
   property :id, Serial
 
   property :serial,           String , length: 255
@@ -18,11 +20,7 @@ class Bike
 
   timestamps :at
 
-  validates_within :status, set: status_set
-
-  def status_set
-   %w{ normal stolen found }
-  end
+  validates_within :status, set: STATUS_SET
 
 end
 
