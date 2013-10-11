@@ -1,10 +1,16 @@
+
 source "https://rubygems.org"
 
 gem 'pry'
-gem 'sqlite3'
+gem 'rake'
+
 gem 'datamapper'
+gem 'dm-sqlite-adapter'
+
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem 'scrypt'
 
 gem 'less'
 gem 'thin'
+
