@@ -15,7 +15,7 @@ class User
   validates_presence_of :username
 
   attr_accessor :password, :password_confirmation
-  validate_presence_of :password, if: lambda { |u| !(u.has_password?) }, message: "Please provide a password for your account."
+  validates_presence_of :password, if: lambda { |u| !(u.has_password?) }, message: "Please provide a password for your account."
   validates_confirmation_of :password, message: "Passwords don't match!"
 
   def self.authenticate(user, pass)
