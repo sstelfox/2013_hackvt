@@ -21,6 +21,21 @@ class User
     self.crypt_pass = calc_hash(pass)
   end
 
+  def self.authenticate(user, pass)
+    user = first(username: user)
+
+    return nil if user.nil?
+    return nil unless user.check_password(pass)
+
+    user
+  end
+
+  def check_password(pass)
+    (crypt_hash == calc_hash(pass))
+  end
+
+  protected
+
   def calc_hash(pass)
     SCrypt::Engine.scrypt(pass, salt, SCrypt::Engine.autodetect_cost(salt), 32).unpack('H*').first
   end
