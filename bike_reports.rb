@@ -1,4 +1,7 @@
 
+base_directory = File.expand_path(File.dirname(__FILE__))
+$LOAD_PATH.unshift(base_directory) unless $LOAD_PATH.include?(base_directory)
+
 require 'json'
 
 require 'sinatra/base'
