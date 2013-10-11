@@ -18,12 +18,6 @@ class User
   validate_presence_of :password, if: lambda { |u| !(u.has_password?) }, message: "Please provide a password for your account."
   validates_confirmation_of :password, message: "Passwords don't match!"
 
-  def password=(pass)
-    @password = pass
-    generate_salt
-    self.crypt_pass = calc_hash(pass)
-  end
-
   def self.authenticate(user, pass)
     user = first(username: user)
 
@@ -35,6 +29,16 @@ class User
 
   def check_password(pass)
     (crypt_hash == calc_hash(pass))
+  end
+  
+  def has_password?
+    (!!crypt_pass && !!salt)
+  end
+
+  def password=(pass)
+    @password = pass
+    generate_salt
+    self.crypt_pass = calc_hash(pass)
   end
 
   protected
