@@ -26,3 +26,20 @@ task :console => [:environment] do
   pry
 end
 
+namespace :db do
+  desc "Upgrade or initialize the database"
+  task :migrate => [:environment] do
+    DataMapper.auto_upgrade!
+  end
+
+  desc "Blow away the current database and start from scratch"
+  task :reset => [:environment] do
+    DataMapper.auto_migrate!
+    Rake::Task['db:seed'].execute
+  end
+
+  desc "Seed the database with initial required data"
+  task :seed => [:environment, 'db:migrate'] do
+    # TODO
+  end
+end
