@@ -40,6 +40,6 @@ namespace :db do
 
   desc "Seed the database with initial required data"
   task :seed => [:environment, 'db:migrate'] do
-    # TODO
+    require './config/seed'
   end
 end
