@@ -1,7 +1,7 @@
-
 class RegistrationController < ApplicationController
   # GET /register
   def new
+    @title = "Register a bike"
     redirect_to new_bike_path if current_user
 
     @registration_form = RegistrationForm.new
@@ -21,6 +21,7 @@ class RegistrationController < ApplicationController
     end
   end
 
+  private
   def registration_params
     params.require(:registration)
     params[:registration].permit(:serial, :frame_make, :frame_model, :color,
