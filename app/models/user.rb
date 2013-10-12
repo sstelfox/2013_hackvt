@@ -4,6 +4,8 @@ require 'scrypt'
 class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
 
+  has_many :bikes
+
   def self.authenticate(email, password)
     user = where(email: email).first
 
