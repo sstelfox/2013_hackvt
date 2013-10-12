@@ -1,6 +1,7 @@
 /* Set the defaults for DataTables initialisation */
+//wrappers for filters on top of table
 $.extend( true, $.fn.dataTable.defaults, {
-	"sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+	"sDom": "<'row'<'col-xs-12 col-sm-12 col-md-6 col-lg-6'l><'col-xs-12 col-sm-12 col-md-6 col-lg-6'f>r>t<'row'<'col-xs-12 col-sm-12 col-md-6 col-lg-6'i><'col-xs-12 col-sm-12 col-md-6 col-lg-6'p>>",
 	"sPaginationType": "bootstrap",
 	"oLanguage": {
 		"sLengthMenu": "_MENU_ records per page"
@@ -43,8 +44,14 @@ $.extend( $.fn.dataTableExt.oPagination, {
 				}
 			};
 
-			$(nPaging).addClass('pagination').append(
-				'<ul>'+
+			// $(nPaging).addClass('pagination').append(
+			// 	'<ul>'+
+			// 		'<li class="prev disabled"><a href="#">&larr; '+oLang.sPrevious+'</a></li>'+
+			// 		'<li class="next disabled"><a href="#">'+oLang.sNext+' &rarr; </a></li>'+
+			// 	'</ul>'
+			// );
+			$(nPaging).append(
+				'<ul class="pagination">'+
 					'<li class="prev disabled"><a href="#">&larr; '+oLang.sPrevious+'</a></li>'+
 					'<li class="next disabled"><a href="#">'+oLang.sNext+' &rarr; </a></li>'+
 				'</ul>'

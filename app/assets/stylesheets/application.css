@@ -951,3 +951,8 @@ footer{text-align:center;padding:2em 0 1em;}
 .main{padding-top:65px;}
 .header{padding:1em 0;}.header h1{font-size:2em;line-height:1;margin:0;}
 @media (max-width:768px){.header{padding:.5em 0;}.header h1{font-size:1.5em;}}
+#datatable thead th.sorting_asc,#datatable thead td.sorting_asc,#datatable thead th.sorting_desc,#datatable thead td.sorting_desc{background-color:black;cursor:pointer;}
+#datatable thead th.sorting_asc .icon:before,#datatable thead td.sorting_asc .icon:before{content:"\f0de";}
+#datatable thead th.sorting_desc .icon:before,#datatable thead td.sorting_desc .icon:before{content:"\f0dd";}
+#datatable thead th.sorting,#datatable thead td.sorting{cursor:pointer;}#datatable thead th.sorting .icon:before,#datatable thead td.sorting .icon:before{color:white;content:"\f0dc";}
+#datatable thead th .icon,#datatable thead td .icon{font-family:'FontAwesome';font-style:normal;}

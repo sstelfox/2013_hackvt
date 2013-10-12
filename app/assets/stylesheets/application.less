@@ -85,3 +85,35 @@ footer {
 		}
 	}
 }
+
+#datatable{
+	thead{
+		th,td{
+			&.sorting_asc, &.sorting_desc {
+				background-color: black;
+				cursor:pointer;
+			}
+			&.sorting_asc {
+				.icon:before {
+					content:"\f0de";
+				}
+			}
+			&.sorting_desc {
+				.icon:before {
+					content:"\f0dd";
+				}
+			}
+			&.sorting {
+				cursor:pointer;
+				.icon:before {
+					color: white;
+					content:"\f0dc";
+				}
+			}
+			.icon {
+				font-family:'FontAwesome';
+				font-style:normal;
+			}
+		}
+	}
+}

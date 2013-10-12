@@ -57,7 +57,21 @@
 	</div>
   <script type="text/javascript">
     $(function(){
-      $('#datatable').dataTable();
+      $('#bike-list').dataTable({
+        "aaSorting": [[0, 'desc']],
+        "bJQueryUI": false,
+        "bAutoWidth": false,
+        "iDisplayLength": 50
+        // "aoColumns": [
+        //   { "bSortable":false, "bSearchable": false },
+        //   { "sTitle": "Quiz Name <i class='icon'></i>" },
+        //   { "sTitle": "Short Description <i class='icon'></i>" },
+        //   { "sTitle": "Date Taken <i class='icon'></i>" },
+        //   { "sTitle": "Grade <i class='icon'></i>" },
+        //   { "bSortable":false, "bSearchable": false },
+        //   { "bSortable":false, "bSearchable": false }
+        // ]
+      });
     });
   </script>
 </body>
