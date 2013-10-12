@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :bikes
 
-  # TODO add hashing
+  # TODO add password hashing
 
   def self.authenticate(email, password)
     where(email: email, password: password).first
