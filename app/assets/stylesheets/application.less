@@ -199,33 +199,39 @@ footer {
 
 // BIKE DETAIL
 .bike-detail {
-	h2 {
+	h2,h4 {
 		font-size:28/14em;
+		margin-top:0;
 		span {
 			display:block;
 			font-size:14/28em;
 			font-weight:700;
-			&.serial {
-				display:inline;
-				margin-left:.5em;
-			}
 		}
 	}
-	.status {
-		float:left;
+	h4 {
 		font-size:18/14em;
-		width:90px;
-		margin-left:-105px;
+		span {
+			font-size:14/18em;
+		}
+	}
+	.bike-actions {
 		text-align:center;
-		&.ok {
-			color:@brand-primary;
-		}
-		&.stolen {
-			color:@brand-danger;
-		}
-		i {
-			display:block;
-			font-size:3em;
+		.status {
+			font-size:18/14em;
+			margin:0 0 1em;
+			&.ok {
+				color:@brand-primary;
+			}
+			&.stolen {
+				color:@brand-danger;
+			}
+			i {
+				display:block;
+				font-size:3em;
+			}
+			p {
+				margin-top:.5em;
+			}
 		}
 	}
 }
