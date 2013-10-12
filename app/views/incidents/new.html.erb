@@ -32,7 +32,7 @@
       <%= f.select :station, station_array, class: 'form-control' %>
     </div>
   </fieldset>
-  <% unless @incident_form.bike.new_record? %>
+  <% if @incident_form.bike.new_record? %>
     <fieldset class="well">
       <h4>Bike Information</h4>
       <div class="form-group">
