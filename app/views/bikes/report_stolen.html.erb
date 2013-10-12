@@ -1,0 +1,42 @@
+<div class="row">
+	<form class="col-xs-12 report-stolen" role="form">
+		<h1>Incident Report</h1>
+		<fieldset class="well">
+			<h4>Location Information</h4>
+			<div class="form-group">
+				<label for="incident-datetime">Date/Time</label>
+				<input type="datetime" class="form-control" id="incident-time" name="incident-time">
+			</div>
+			<div class="form-group">
+				<label for="incident-location">Last Known Location</label>
+				<input type="text" class="form-control" id="incident-location" name="incident-location" placeholder="123 Example St. Town, Vermont 05405">
+			</div>
+		</fieldset>
+		<fieldset class="well">
+			<h4>Police Report</h4>
+			<div class="form-group">
+				<label for="incident-report-number">Incident Report Number</label>
+				<input type="text" class="form-control" id="incident-report-number" name="incident-report-number">
+			</div>
+			<div class="form-group">
+				<label for="report-officer">Reporting Officer</label>
+				<input type="text" class="form-control" id="report-officer" name="report-officer">
+			</div>
+			<div class="form-group">
+				<label for="report-station">Reporting Station</label>
+				<input type="text" class="form-control" id="report-station" name="report-station">
+			</div>
+		</fieldset>
+		<fieldset class="well">
+			<h4>Bike Information</h4>
+			<div class="form-group">
+				<label for="select-bike">Bike involved in incident</label>
+				<select class="form-control" id="select-bike">
+					<option value="register-new">Register New Bike</option>
+					<option value="bike-1">Example Bike 1</option>
+					<option value="bike-2">Example Bike 2</option>
+				</select>
+			</div>
+		</fieldset>
+	</form>
+</div>
