@@ -6087,6 +6087,17 @@ td.visible-print {
 .bootstrap-datetimepicker-widget ul.list-unstyled li.in div.timepicker div.timepicker-picker table.table-condensed tbody > tr > td {
   padding: 0px !important;
 }
+form fieldset {
+  border-bottom: 1px solid #ddd;
+  padding: 0 0 1em;
+  margin: 0 0 1em;
+}
+form .fieldset-header {
+  margin: 0 0 2em;
+}
+form .fieldset-header h3 {
+  margin: 0 0 .25em;
+}
 .btn-xl {
   white-space: normal;
   width: 100%;
@@ -6116,13 +6127,25 @@ td.visible-print {
     margin-bottom: 15px;
   }
 }
+footer {
+  text-align: center;
+}
 .main {
-  padding-top: 70px;
+  padding-top: 60px;
 }
 .header {
   padding: 1em 0;
 }
 .header h1 {
+  font-size: 2em;
   line-height: 1;
   margin: 0;
+}
+@media (max-width: 768px) {
+  .header {
+    padding: .5em 0;
+  }
+  .header h1 {
+    font-size: 1.5em;
+  }
 }
