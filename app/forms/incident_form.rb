@@ -35,6 +35,7 @@ class IncidentForm
     incident.last_seen = Time.strptime(params[:last_seen], '%m/%d/%Y %H:%M')
 
     if valid?
+      bike.status = "stolen"
       bike.save!
       incident.save!
       true
