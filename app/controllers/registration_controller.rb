@@ -22,6 +22,7 @@ class RegistrationController < ApplicationController
   end
 
   private
+
   def registration_params
     params.require(:registration)
     params[:registration].permit(:serial, :frame_make, :frame_model, :color,
