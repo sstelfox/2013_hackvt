@@ -61,9 +61,9 @@
 						}).addTo(map);
 
 						var sadIcon = L.icon({
-							iconUrl: '<%= image_path "sad.png" %>',
-							iconSize: [32, 32],
-							iconAnchor: [16, 16]
+							iconUrl: '<%= image_path "marker-icon.png" %>',
+							iconSize: [25, 41],
+							iconAnchor: [12, 41]
 						});
 
 						var locations = <%= JSON.generate(@incidents.map { |i| [i.latitude, i.longitude] }) %>;
