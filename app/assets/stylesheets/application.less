@@ -42,16 +42,28 @@ form {
 	}
 }
 
+// FOOTER
+footer {
+	text-align:center;
+}
+
 // OFFSET LAYOUT FOR NAV
 .main {
-	padding-top:70px;
+	padding-top:60px;
 }
 
 // VIEW HEADER
 .header {
 	padding:1em 0;
 	h1 {
+		font-size:2em;
 		line-height:1;
 		margin:0;
+	}
+	@media (max-width:@screen-sm) {
+		padding:.5em 0;
+		h1 {
+			font-size:1.5em;
+		}
 	}
 }
