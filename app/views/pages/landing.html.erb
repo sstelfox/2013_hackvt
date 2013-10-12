@@ -13,26 +13,23 @@
 <div class="callouts">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-4 col-md-4 col-12 callout">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-12 callout">
 				<div class="colpad">
-					<h3>I Lost My Bike</h3>
-					<i class="icon icon-xl icon-frown"></i>
+					<%= link_to raw("<h3>I Lost My Bike</h3><i class='icon icon-xl icon-frown'></i>"), report_stolen_path %>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, nobis, harum eos distinctio odit illum dolores pariatur veniam excepturi id!</p>
 					<%= link_to "Report a missing bike", report_stolen_path, class:"btn btn-primary" %>
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-4 col-12 callout">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-12 callout">
 				<div class="colpad">
-					<h3>I Found a Bike</h3>
-					<i class="icon icon-xl icon-eye-open"></i>
+					<%= link_to raw("<h3>I Found a Bike</h3><i class='icon icon-xl icon-eye-open'></i>"), found_bike_path %>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, nobis, harum eos distinctio odit illum dolores pariatur veniam excepturi id!</p>
 					<%= link_to "Report a found bike", found_bike_path, class:"btn btn-primary" %>
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-4 col-12 callout">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-12 callout">
 				<div class="colpad">
-					<h3>Search for a bike</h3>
-					<i class="icon icon-xl icon-search"></i>
+					<%= link_to raw("<h3>Search for a bike</h3><i class='icon icon-xl icon-search'></i>"), search_path %>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, nobis, harum eos distinctio odit illum dolores pariatur veniam excepturi id!</p>
 					<%= link_to "Search Bikes", search_path, class:"btn btn-primary" %>
 				</div>
