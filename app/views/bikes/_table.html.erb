@@ -6,6 +6,7 @@
       <th width="10%">Color</th>
       <th width="15%">Serial #</th>
       <th>Description</th>
+      <th></th>
       <th width="180"></th>
     </tr>
   </thead>
@@ -31,7 +32,15 @@
         </td>
         <td>
           <% if current_user && bike.user == current_user %>
-            <%= link_to "Report Stolen", report_stolen_bike_path(bike), class: "btn btn-xs btn-danger" %>
+            <% if bike.status == "stolen" %>
+              <%= link_to "Report Returned", report_returned_bike_path(bike), class: "btn btn-xs btn-success" %>
+            <% else %>
+              <%= link_to "Report Stolen", report_stolen_bike_path(bike), class: "btn btn-xs btn-danger" %>
+            <% end %>
+          <% end %>
+        </td>
+        <td>
+          <% if current_user && bike.user == current_user %>
             <%= link_to raw("<i class='glyphicon glyphicon-edit'></i>"), edit_bike_path(bike), class:"btn btn-xs btn-default", title:"Edit bike" %>
             <%= link_to raw("<i class='glyphicon glyphicon-transfer'></i>"), transfer_bike_path(bike), class:"btn btn-xs btn-warning", title:"Transfer bike" %>
             <%= link_to raw("<i class='glyphicon glyphicon-trash'></i>"), bike_path(bike), class:"btn btn-xs btn-warning", title:"Remove bike", data: {confirm: "Are you sure?"}, method: :delete %>
