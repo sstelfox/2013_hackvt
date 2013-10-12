@@ -38,6 +38,8 @@ GEM
     coffee-script-source (1.6.3)
     columnize (0.3.6)
     commonjs (0.2.7)
+    craigslist (0.1.0)
+      nokogiri (~> 1.6.0)
     daemons (1.1.9)
     debugger (1.6.2)
       columnize (>= 0.3.1)
@@ -69,8 +71,11 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.2)
     mime-types (1.25)
+    mini_portile (0.5.0)
     minitest (4.7.5)
     multi_json (1.8.1)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
     polyglot (0.3.3)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -145,6 +150,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  craigslist
   debugger
   jbuilder (~> 1.2)
   jquery-rails
