@@ -3,8 +3,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-12">
-				<h1>Don't wait until its already gone!</h1>
-				<h4>Register your bike to get notified if recovered after being lost.</h4>
+				<h1>Don't wait until it's already gone!</h1>
+				<h4>Register your bike to get notified if it's recovered</h4>
 				<%= link_to raw("<i class='icon icon-list'></i> Register a Bike"), register_path, class:"btn btn-xl btn-primary" %>
 			</div>
 		</div>
@@ -15,21 +15,21 @@
 		<div class="row">
 			<div class="col-lg-4 col-md-4 col-sm-4 col-12 callout">
 				<div class="colpad">
-					<%= link_to raw("<h3>I Lost My Bike</h3><i class='icon icon-xl icon-frown'></i>"), report_stolen_path %>
+					<%= link_to raw("<h3>I Lost My Bike</h3><i class='icon icon-xl icon-frown'></i>"), report_stolen_path, class: "link" %>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, nobis, harum eos distinctio odit illum dolores pariatur veniam excepturi id!</p>
 					<%= link_to "Report a missing bike", report_stolen_path, class:"btn btn-primary" %>
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 col-12 callout">
 				<div class="colpad">
-					<%= link_to raw("<h3>I Found a Bike</h3><i class='icon icon-xl icon-eye-open'></i>"), found_bike_path %>
+					<%= link_to raw("<h3>I Found a Bike</h3><i class='icon icon-xl icon-eye-open'></i>"), found_bike_path, class: "link" %>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, nobis, harum eos distinctio odit illum dolores pariatur veniam excepturi id!</p>
 					<%= link_to "Report a found bike", found_bike_path, class:"btn btn-primary" %>
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 col-12 callout">
 				<div class="colpad">
-					<%= link_to raw("<h3>Search for a bike</h3><i class='icon icon-xl icon-search'></i>"), search_path %>
+					<%= link_to raw("<h3>Search for a bike</h3><i class='icon icon-xl icon-search'></i>"), search_path, class: "link" %>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, nobis, harum eos distinctio odit illum dolores pariatur veniam excepturi id!</p>
 					<%= link_to "Search Bikes", search_path, class:"btn btn-primary" %>
 				</div>
