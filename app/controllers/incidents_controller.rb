@@ -18,6 +18,7 @@ class IncidentsController < ApplicationController
     if @incident_form.submit(incident_params)
       redirect_to bikes_path, notice: "You incident has been reported"
     else
+      @last_seen = params[:incident][:last_seen]
       render "new"
     end
   end

@@ -4,7 +4,7 @@
     <h4>Location Information</h4>
     <div class="form-group">
       <%= f.label "Last seen" %>
-      <%= f.datetime_field :last_seen, class: 'form-control' %>
+      <%= f.datetime_field :last_seen, class: 'form-control', "value" => @last_seen %>
     </div>
     <script type="text/javascript">
       $(function(){
