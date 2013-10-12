@@ -1,4 +1,6 @@
 class TransfersController < ApplicationController
+  before_action :authenticate_user
+  
   def new
     @bike = Bike.find(bike_id)
     @transfer_form = TransferForm.new(@bike)
