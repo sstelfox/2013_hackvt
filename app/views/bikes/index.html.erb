@@ -1,45 +1,21 @@
 <div class="row">
   <div class="col-lg-12 col-12">
-    <h2>My Bikes</h2>
+    <div class="header clearfix">
+      <% if @bikes.size > 0 %>
+        <div class="header-actions pull-right">
+          <%= link_to "Add New Bike", new_bike_path, class: "btn btn-success" %>
+        </div>
+      <% end %>
+      <h1 class="pull-left">My Bikes</h1>
+    </div>
     <div class="well">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Status</th>
-            <th>Make/Model</th>
-            <th>Color</th>
-            <th>Serial #</th>
-            <th>Description</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tfoot>
-        </tfoot>
-        <tbody>
-          <tr>
-            <td>
+      <% if @bikes.size > 0 %>
+        <%= render 'bikes/table' %>
+      <% else %>
+        <h3>Please register a bike!</h3>
+        <p>Uh oh! Looks like you haven't registered a bike yet.  Get started <%= link_to "here", new_bike_path %>.</p>
 
-            </td>
-            <td>
-              Trek Montana
-            </td>
-            <td>
-              Orange
-            </td>
-            <td>
-              129PDS30234902384AN283
-            </td>
-            <td>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </td>
-            <td>
-              <a class="btn btn-xs btn-default" href="#">Update</a>
-              <a class="btn btn-xs btn-danger" href="#">Report Missing</a>
-              <a class="btn btn-xs btn-warning" href="#">Remove</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <% end %>
     </div>
   </div>
 </div>

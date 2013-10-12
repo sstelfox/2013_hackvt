@@ -1,7 +1,13 @@
 class BikesController < ApplicationController
 
   def index
-#    @bikes = current_user.bikes
+    if current_user
+      @bikes = current_user.bikes
+    else
+      # TODO
+      @bikes = Bike.all
+    end
+
   end
 
   def new
@@ -9,7 +15,9 @@ class BikesController < ApplicationController
   end
 
   def create
-    @bike = Bike.new(params[:bike])
+    @bike = Bike.new( bike_params )
+    @bike.status = "normal"
+
     @bike.user = current_user
     if @bike.save
       redirect_to bikes_path
@@ -18,18 +26,13 @@ class BikesController < ApplicationController
     end
   end
 
-  def show
-    @bike = Bike.find(params[:id])
-    #TODO is this __my__ bike?
-  end
-
   def edit
     @bike = Bike.find(params[:id])
   end
 
   def update
     @bike = Bike.find(params[:id])
-    @bike.update_attributes(params[:bike])
+    @bike.update_attributes(bike_params)
     if @bike.save
       redirect_to bikes_path
     else
@@ -40,6 +43,7 @@ class BikesController < ApplicationController
   def destroy
     @bike = Bike.find(params[:id])
     @bike.delete
+    redirect_to bikes_path
   end
 
   def report_stolen
@@ -52,5 +56,11 @@ class BikesController < ApplicationController
 
   def perform_search
     # TODO
+  end
+
+  private
+  def bike_params
+    params.require(:bike)
+    params[:bike].permit(:serial, :frame_make, :frame_model, :color, :description)
   end
 end
