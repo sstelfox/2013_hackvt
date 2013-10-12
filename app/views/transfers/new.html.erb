@@ -1,0 +1,25 @@
+<%= form_for @transfer_form, url: transfer_bike_path(@bike), html: {class: "form-horizontal well"} do |f| %>
+  <div class="form-group">
+    <%= f.label "First name", class: "col-lg-4 control-label" %>
+    <div class="controls col-lg-8">
+      <%= f.text_field :first_name, class: "form-control", placeholder: "Jane" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label "Last name", class: "col-lg-4 control-label" %>
+    <div class="controls col-lg-8">
+      <%= f.text_field :last_name, class: "form-control", placeholder: "Smith" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label "Email", class: "col-lg-4 control-label" %>
+    <div class="controls col-lg-8">
+      <%= f.text_field :email, class: "form-control", placeholder: "buyer@example.tld" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-8 col-lg-offset-4">
+      <%= f.submit "Transfer Bike", class: "btn btn-primary", confirm: "Are you sure? This can't be undone." %>
+    </div>
+  </div>
+<% end %>
