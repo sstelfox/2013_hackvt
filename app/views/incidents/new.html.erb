@@ -28,18 +28,48 @@
     </div>
     <div class="form-group">
       <%= f.label "Reporting station" %>
-      <%= f.text_field :station, class: 'form-control' %>
+      <% station_array = LAW_AGENCIES.map { |l| [l, l.parameterize] } %>
+      <%= f.select :station, station_array, class: 'form-control' %>
     </div>
   </fieldset>
-  <fieldset class="well">
-    <h4>Bike Information</h4>
-    <div class="form-group">
-      <label for="select-bike">Bike involved in incident</label>
-      <select class="form-control" id="select-bike">
-        <option value="register-new">Register New Bike</option>
-        <option value="bike-1">Example Bike 1</option>
-        <option value="bike-2">Example Bike 2</option>
-      </select>
+  <% unless @incident_form.bike.new_record? %>
+    <fieldset class="well">
+      <h4>Bike Information</h4>
+      <div class="form-group">
+        <%= f.label "Serial Number", class: "col-lg-4 control-label" %>
+        <div class="controls col-lg-8">
+          <%= f.text_field :serial, class: "form-control", placeholder: "Serial number" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label "Frame Make", class: "col-lg-4 control-label" %>
+        <div class="controls col-lg-8">
+          <%= f.text_field :frame_make, class: "form-control", placeholder: "Frame make" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label "Frame Model", class: "col-lg-4 control-label" %>
+        <div class="controls col-lg-8">
+          <%= f.text_field :frame_model, class: "form-control", placeholder: "Frame model" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label "Color", class: "col-lg-4 control-label" %>
+        <div class="controls col-lg-8">
+          <%= f.text_field :color, class: "form-control", placeholder: "Color" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label "Description", class: "col-lg-4 control-label" %>
+        <div class="controls col-lg-8">
+          <%= f.text_area :description, rows: "5", class: "form-control", placeholder: "Description" %>
+        </div>
+      </div>
+    </fieldset>
+  <% end %>
+  <div class="form-group">
+    <div class="col-lg-8 col-lg-offset-4">
+      <%= f.submit 'Report Stolen', class: "btn btn-primary" %>
     </div>
-  </fieldset>
+  </div>
 <% end %>
