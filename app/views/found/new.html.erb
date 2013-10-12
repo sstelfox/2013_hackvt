@@ -1,60 +1,71 @@
 <div class="row">
-	<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-12">
-		<form class="form-horizontal well">
-			<fieldset>
-				<div class="fieldset-header">
-					<h3>Vital Information</h3>
-					<p>Logging the serial number is the easiest way for us to match the bike with the owner</p>
-				</div>
-				<div class="form-group">
-					<label for="serial-number" class="col-lg-4 control-label">Serial Number</label>
-					<div class="controls col-lg-8">
-						<input type="text" class="form-control" id="serial-number" name="serial-number">
-					</div>
-				</div>
-				<img class="img-responsive" src="http://placehold.it/1200x400&text=Where to find serials" alt="Where to find serials">
-			</fieldset>
-			<fieldset>
-				<div class="fieldset-header">
-					<h3>More information</h3>
-					<p>Some users don't know their serial, so if you can provide more informaiton we have a greater chance of connecting them with the bike you have found!</p>
-				</div>
-				<div class="form-group">
-					<label for="make" class="col-lg-4 control-label">Manufacturer</label>
-					<div class="controls col-lg-8">
-						<input type="text" class="form-control" id="make" name="make" placeholder="e.g. Schwinn/Huffy/Trek">
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="model" class="col-lg-4 control-label">Model</label>
-					<div class="controls col-lg-8">
-						<input type="text" class="form-control" id="model" name="model" placeholder="e.g. Hornet or Mark V if Manufacturer is Schwinn">
-					</div>
-				</div>
-			</fieldset>
-			<fieldset>
-				<div class="fieldset-header">
-					<h3>Your Contact Information</h3>
-					<p>The owner needs to know how to contact you.</p>
-				</div>
-				<div class="form-group">
-					<label for="email" class="col-lg-4 control-label">Email</label>
-					<div class="controls col-lg-8">
-						<input type="email" id="email" name="email" class="form-control">
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="phone" class="col-lg-4 control-label">Phone</label>
-					<div class="controls col-lg-8">
-						<input type="tel" id="phone" name="phone" class="form-control">
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-lg-8 col-lg-offset-4">
-						<button type="submit" class="btn btn-primary">Submit</button>
-					</div>
-				</div>
-			</fieldset>
-		</form>
-	</div>
+  <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-12">
+    <div class="alert alert-danger">
+      <h3><i class="glyphicon glyphicon-hand-right"></i> Before you submit a report here</h3>
+      <p>You should report it to the local police department so they can check it against their missing bike reports! Have the serial number handy!</p>
+      <p>Once you've done that, feel free to report it here and if the bike is in our system we can try to notify the owner.</p>
+    </div>
+    <%= form_for @found_form, url: found_bike_path, html: { class: 'form-horizontal well' } do |f| %>
+      <fieldset>
+        <div class="fieldset-header">
+          <h3>Vital Information</h3>
+          <p>Logging the serial number is the easiest way for us to match the bike with the owner.</p>
+        </div>
+        <div class="form-group">
+          <%= f.label "Serial Number", class: "col-lg-4 control-label" %>
+          <div class="controls col-lg-8">
+            <%= f.text_field :serial, class: "form-control", placeholder: "Serial number" %>
+          </div>
+        </div>
+        <img class="img-responsive" src="http://placehold.it/1200x400&text=Where to find serials" alt="Where to find serials">
+      </fieldset>
+      <fieldset>
+        <div class="fieldset-header">
+          <h3>More information</h3>
+          <p>Some users don't know their serial, so if you can provide more informaiton we'll have a greater chance of connecting them with the bike you have found!</p>
+        </div>
+        <div class="form-group">
+          <%= f.label "Manufacturer", class: "col-lg-4 control-label" %>
+          <div class="controls col-lg-8">
+            <%= f.text_field :frame_make, class: "form-control", placeholder: "Manufacturer (e.g. Schwinn/Huffy/Trek)" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label "Model", class: "col-lg-4 control-label" %>
+          <div class="controls col-lg-8">
+            <%= f.text_field :frame_model, class: "form-control", placeholder: "Model (e.g. Hornet or Mark V)" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label "Description", class: "col-lg-4 control-label" %>
+          <div class="controls col-lg-8">
+            <%= f.text_area :description, class: "form-control", rows: "3", placeholder: "Describe the bike (e.g. Has a sweet koala sticker)" %>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <div class="fieldset-header">
+          <h3>Your Contact Information</h3>
+          <p>This will help us put the owner in touch with you if needed.</p>
+        </div>
+        <div class="form-group">
+          <%= f.label "Email", class: "col-lg-4 control-label" %>
+          <div class="controls col-lg-8">
+            <%= f.text_field :email, class: "form-control", placeholder: "Email address" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label "Phone", class: "col-lg-4 control-label" %>
+          <div class="controls col-lg-8">
+            <%= f.text_field :phone, class: "form-control", type: "tel", placeholder: "Phone number" %>
+          </div>
+        </div>
+      </fieldset>
+      <div class="form-group">
+        <div class="col-lg-8 col-lg-offset-4">
+          <%= f.submit "Submit", class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

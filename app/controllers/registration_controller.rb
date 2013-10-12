@@ -1,7 +1,7 @@
-
 class RegistrationController < ApplicationController
   # GET /register
   def new
+    @title = "Register a bike"
     redirect_to new_bike_path if current_user
 
     @registration_form = RegistrationForm.new
@@ -15,11 +15,13 @@ class RegistrationController < ApplicationController
 
     if @registration_form.submit(registration_params)
       session[:user_id] = @registration_form.user.id
-      redirect_to root_path, notice: "Thank you for registering!"
+      redirect_to bikes_path, notice: "Thank you for registering!"
     else
       render "new"
     end
   end
+
+  private
 
   def registration_params
     params.require(:registration)

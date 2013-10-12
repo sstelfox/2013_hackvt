@@ -1,6 +1,8 @@
 BikeReports::Application.routes.draw do
   root 'pages#landing'
 
+  get '/faq', to: 'pages#faq'
+
   get '/search', to: 'search#new', as: :search
   post '/search', to: 'search#create'
 
@@ -21,13 +23,14 @@ BikeReports::Application.routes.draw do
   resources :bikes, except: [:show] do
     collection do
       get :report_stolen, as: :report_stolen, action: :report_stolen
-      get :search, as: :search, action: :search
-      post :search, as: :perform_search, action: :perform_search
     end
 
     member do
       get '/report_stolen', to: 'incidents#new', as: :report_stolen
       post '/report_stolen', to: 'incidents#create'
+      get '/craigslist', to: 'bikes#craigslist'
+      get '/transfer', to: 'transfers#new', as: :transfer
+      post '/transfer', to: 'transfers#create'
     end
   end
 end
