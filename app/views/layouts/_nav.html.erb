@@ -8,19 +8,17 @@
   <a class="navbar-brand" href="#">Safe Spokes VT</a>
   <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav">
-      <li><%= link_to "My Bikes", bikes_path %></li>
       <li><%= link_to "Register a Bicycle", new_bike_path %></li>
       <li><%= link_to "Report Incident", "#TODO" %></li>
       <li><%= link_to "Search by Serial", search_bikes_path %></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li>
       <% if current_user %>
-        <%= link_to "Logout", logout_path %>
+      <li><%= link_to "My Bikes", bikes_path %></li>
+      <li> <%= link_to "Logout", logout_path %> </li>
       <% else  %>
-        <%= link_to "Login", login_path %>
+      <li> <%= link_to "Login", login_path %> </li>
       <% end%>
-      </li>
     </ul>
   </div>
 </div>
