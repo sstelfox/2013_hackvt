@@ -19,21 +19,24 @@ def email
   "#{SecureRandom.hex(5)}@example.tld"
 end
 
-25.times do
+50.times do
   User.create(first_name: first_names.sample, last_name: last_names.sample,
     email: email, password: 'test', password_confirmation: 'test')
 end
 
-40.times do
+100.times do
   u = User.all.sample
   Bike.create(user: u, serial: SecureRandom.hex(10), frame_make: "A Company",
     frame_model: "A Bike", color: "Uncolored")
 end
 
-8.times do
+50.times do
   u = User.all.sample
-  Incident.create(bike: u.bikes.sample, last_seen: 10.minutes.ago,
+  next if u.bikes.empty?
+  i = Incident.create(bike: u.bikes.sample, last_seen: 10.minutes.ago,
     last_location: "A place in burlington", latitude: "44.4#{rand(10000)}".to_f,
-    longitude: "-73.2#{rand(10000)}".to_f)
+    longitude: "-73.#{(16..22).to_a.sample}#{rand(10000)}".to_f)
+  i.bike.status = "stolen"
+  i.bike.save
 end
 
