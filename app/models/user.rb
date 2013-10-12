@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 
   # TODO Email validation
   # TODO add password hashing
+  #
+  # TODO check user_type of for law_enforcement or bike_shop
 
   def self.authenticate(email, password)
     where(email: email, password: password).first

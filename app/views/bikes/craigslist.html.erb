@@ -1,3 +1,6 @@
+<% if @results.size > 0 %>
+<h1>Interesting Results</h1>
+<p>These are some relevant seeming bike postings near your location. Anything sound familiar?</p>
 <table>
   <thead>
     <tr>
@@ -16,3 +19,7 @@
     <% end %>
   </tbody>
 </table>
+<% else %>
+  <h1>Nothing Found</h1>
+  <p>Sadly we didn't see anything on Craigslist that might help you find your bike.</p>
+<% end %>
