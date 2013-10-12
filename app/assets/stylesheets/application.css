@@ -1129,8 +1129,8 @@ textarea.chosen-container-single .chosen-single{height:auto;}
 footer{background:#222222;color:#eeeeee;text-align:center;padding:2em 0 1em;}
 .header{padding:1em 0;}.header h1{font-size:2em;line-height:1;margin:0;}
 @media (max-width:768px){.header{padding:.5em 0;}.header h1{font-size:1.5em;}}
-#bike-table thead th.sorting_asc,#bike-table thead td.sorting_asc,#bike-table thead th.sorting_desc,#bike-table thead td.sorting_desc{background-color:black;cursor:pointer;color:white;}
-#bike-table thead th.sorting_asc .icon:before,#bike-table thead td.sorting_asc .icon:before{content:"\f0de";color:white;}
-#bike-table thead th.sorting_desc .icon:before,#bike-table thead td.sorting_desc .icon:before{content:"\f0dd";color:white;}
-#bike-table thead th.sorting,#bike-table thead td.sorting{cursor:pointer;}#bike-table thead th.sorting .icon:before,#bike-table thead td.sorting .icon:before{color:#222;content:"\f0dc";}
-#bike-table thead th .icon,#bike-table thead td .icon{font-family:'FontAwesome';font-style:normal;color:#222;}
+#bike-table thead th.sorting_asc,#craigslist-records thead th.sorting_asc,#bike-table thead td.sorting_asc,#craigslist-records thead td.sorting_asc,#bike-table thead th.sorting_desc,#craigslist-records thead th.sorting_desc,#bike-table thead td.sorting_desc,#craigslist-records thead td.sorting_desc{background-color:black;cursor:pointer;color:white;}
+#bike-table thead th.sorting_asc .icon:before,#craigslist-records thead th.sorting_asc .icon:before,#bike-table thead td.sorting_asc .icon:before,#craigslist-records thead td.sorting_asc .icon:before{content:"\f0de";color:white;}
+#bike-table thead th.sorting_desc .icon:before,#craigslist-records thead th.sorting_desc .icon:before,#bike-table thead td.sorting_desc .icon:before,#craigslist-records thead td.sorting_desc .icon:before{content:"\f0dd";color:white;}
+#bike-table thead th.sorting,#craigslist-records thead th.sorting,#bike-table thead td.sorting,#craigslist-records thead td.sorting{cursor:pointer;}#bike-table thead th.sorting .icon:before,#craigslist-records thead th.sorting .icon:before,#bike-table thead td.sorting .icon:before,#craigslist-records thead td.sorting .icon:before{color:#222;content:"\f0dc";}
+#bike-table thead th .icon,#craigslist-records thead th .icon,#bike-table thead td .icon,#craigslist-records thead td .icon{font-family:'FontAwesome';font-style:normal;color:#222;}

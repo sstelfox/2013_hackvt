@@ -90,6 +90,15 @@
           { "bSortable":false, "bSearchable": false }
         ]
       });
+      $('#craigslist-records').dataTable({
+        "bJQueryUI": false,
+        "bAutoWidth": false,
+        "iDisplayLength": 50,
+        "aoColumns": [
+          {"sTitle": "Title <i class='icon'></i>"},
+          {"sTitle": "Location <i class='icon'></i>"}
+        ]
+      });
     });
   </script>
 </body>
