@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131012002334) do
+ActiveRecord::Schema.define(version: 20131012002532) do
+
+  create_table "bikes", force: true do |t|
+    t.string   "serial"
+    t.string   "frame_make"
+    t.string   "frame_model"
+    t.string   "size"
+    t.string   "color"
+    t.string   "location_found"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",      null: false
