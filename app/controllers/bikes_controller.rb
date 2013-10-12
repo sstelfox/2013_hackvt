@@ -51,7 +51,6 @@ class BikesController < ApplicationController
     redirect_to bikes_path
   end
 
-
   private
 
   def bike_params
