@@ -59,9 +59,19 @@
     <script>
       $(document).ready(function() {
         var map = L.map('map').setView([44.4758825, -73.212072], 12);
+
         L.tileLayer('http://{s}.tile.cloudmade.com/7f07076c4c6642b3bb4024153353afed/997/256/{z}/{x}/{y}.png', {
           maxZoom: 18
         }).addTo(map);
+
+        var sadIcon = L.icon({
+          iconUrl: '<%= image_path "sad.png" %>'
+        });
+
+        var locations = <%= JSON.generate(@incidents.map { |i| [i.latitude, i.longitude] }) %>;
+        for(var i in locations) {
+          L.marker(locations[i], {icon: sadIcon}).addTo(map);
+        };
       });
     </script>
   </div>
