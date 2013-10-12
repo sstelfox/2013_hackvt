@@ -1,0 +1,40 @@
+<p>
+<%= @bike.user.first_name %> <%= @bike.user.last_name %>
+</p>
+<p>
+<%= @bike.user.email %>
+</p>
+
+<p>
+<%= @bike.status.capitalize %>
+</p>
+<p>
+<%= @bike.frame_make %> <%= @bike.frame_model %>
+</p>
+<p>
+<%= @bike.color %>
+</p>
+<p>
+<%= @bike.serial %>
+</p>
+<p>
+<%= @bike.description %>
+</p>
+<p>
+<% if current_user && @bike.user == current_user %>
+  <% if @bike.status == "stolen" %>
+    <%= link_to "Report Returned", report_returned_bike_path(@bike), class: "btn btn-xs btn-success" %>
+    <%= link_to "Search Craigslist", craigslist_bike_path(@bike), class: "btn btn-xs btn-warning" %>
+  <% else %>
+    <%= link_to "Report Stolen", report_stolen_bike_path(@bike), class: "btn btn-xs btn-danger" %>
+  <% end %>
+<% end %>
+</p>
+<p>
+<% if current_user && @bike.user == current_user %>
+  <%= link_to raw("<i class='icon icon-edit'></i>"), edit_bike_path(@bike), class:"btn btn-xs btn-default", title:"Edit bike" %>
+  <%= link_to raw("<i class='icon icon-qrcode'></i>"), qr_bike_path(@bike), class:"btn btn-xs btn-default", title:"Print QR Code" %>
+  <%= link_to raw("<i class='icon icon-exchange'></i>"), transfer_bike_path(@bike), class:"btn btn-xs btn-warning", title:"Transfer bike" %>
+  <%= link_to raw("<i class='icon icon-trash'></i>"), bike_path(@bike), class:"btn btn-xs btn-warning", title:"Remove bike", data: {confirm: "Are you sure?"}, method: :delete %>
+<% end %>
+</p>

@@ -19,7 +19,8 @@ ActiveRecord::Schema.define(version: 20131012073017) do
     t.string   "frame_model"
     t.string   "color"
     t.text     "description"
-    t.string   "status",      default: "normal"
+    t.string   "status",      default: "normal", null: false
+    t.string   "hash_id",                        null: false
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -38,6 +39,8 @@ ActiveRecord::Schema.define(version: 20131012073017) do
   create_table "incidents", force: true do |t|
     t.datetime "last_seen",                              null: false
     t.string   "last_location",                          null: false
+    t.float    "latitude"
+    t.float    "longitude"
     t.string   "police_incident_number"
     t.string   "officer_name"
     t.string   "station"
@@ -54,6 +57,7 @@ ActiveRecord::Schema.define(version: 20131012073017) do
     t.string   "last_name"
     t.string   "email",      null: false
     t.string   "password"
+    t.string   "user_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

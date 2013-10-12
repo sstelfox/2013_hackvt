@@ -51,6 +51,7 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
+    geocoder (1.1.8)
     hike (1.2.3)
     i18n (0.6.5)
     jbuilder (1.5.2)
@@ -103,6 +104,7 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.5)
+    rqrcode (0.4.2)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
@@ -152,11 +154,13 @@ PLATFORMS
 DEPENDENCIES
   craigslist
   debugger
+  geocoder
   jbuilder (~> 1.2)
   jquery-rails
   less-rails
   pry-rails
   rails (= 4.0.0)
+  rqrcode
   rspec
   sdoc
   sqlite3

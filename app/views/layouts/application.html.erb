@@ -3,6 +3,7 @@
 <head>
   <title>Safe Spokes VT <%= @title ? "- #{@title}" :"" %></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag    "chosen.min", media: "all", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -44,17 +45,26 @@
     |__/      |________/|__/  |__/|__/  \__/|________/   |__/                       
   -->
 </head>
-<body>
+<body class="<%= controller_name %>">
   <%= render 'layouts/nav' %>
 
-	<div class="main">
-		<div class="container">
+  <div class="main">
+    <div class="container">
+      <% flash.each do |name, msg| %>
+        <% if msg.is_a?(String) %>
+          <div class="alert alert-<%= name == :notice ? "success" : "danger" %>">
+            <a class="close" data-dismiss="alert">&#215;</a>
+            <%= content_tag :div, msg, :id => "flash_#{name}" %>
+          </div>
+        <% end %>
+      <% end %>
+
       <%= yield %>
-      <footer>
-        <p style="font-size: small">&copy; <%= Time.now.year %> Team WinterMute</p>
-      </footer>
 		</div>
 	</div>
+  <footer>
+    <p style="font-size: small">&copy; <%= Time.now.year %> Team WinterMute</p>
+  </footer>
   <script type="text/javascript">
     $(function(){
       $('#bike-list').dataTable({

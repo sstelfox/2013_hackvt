@@ -8,6 +8,11 @@ class BikesController < ApplicationController
     @bikes = current_user.bikes
   end
 
+  def show
+    @bike = Bike.find(params[:id])
+    @title = "Bike Details: #{@bike.frame_make} #{@bike.frame_model}"
+  end
+
   def new
     @title = "Register a Bike"
     @bike = Bike.new
@@ -26,12 +31,12 @@ class BikesController < ApplicationController
   end
 
   def edit
-    @bike = Bike.find(params[:id])
+    @bike = current_user.bikes.find(params[:id])
     @title = "Update bike: #{@bike.frame_make} #{@bike.frame_model}"
   end
 
   def update
-    @bike = Bike.find(params[:id])
+    @bike = current_user.bikes.find(params[:id])
     @bike.update_attributes(bike_params)
     if @bike.save
       redirect_to bikes_path
@@ -40,15 +45,33 @@ class BikesController < ApplicationController
     end
   end
 
+  def destroy
+    @bike = current_user.bikes.find(params[:id])
+    @bike.delete
+    redirect_to bikes_path
+  end
+
   def craigslist
-    @bike = Bike.find(params[:id])
+    @bike = current_user.bikes.find(params[:id])
     @results = Craigslist.burlington.bikes.query(@bike.frame_make).fetch
+  end
+
+  def report_returned
+    @bike = Bike.find(params[:id])
+    @bike.status = "normal"
+    @bike.save
+    redirect_to bikes_path, notice: "Glad you found your bike!"
   end
 
   def destroy
     @bike = Bike.find(params[:id])
     @bike.delete
     redirect_to bikes_path
+  end
+
+  def qr
+    @bike = current_user.bikes.find(params[:id])
+    render :qr
   end
 
   private

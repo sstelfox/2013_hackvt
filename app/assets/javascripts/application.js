@@ -17,3 +17,8 @@
 //= require datatables.bootstrap
 //= require jquery_ujs
 //= require turbolinks
+//= require chosen.jquery.min
+
+$(function() {
+	$('select').chosen();
+});

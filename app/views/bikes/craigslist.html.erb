@@ -1,18 +1,27 @@
-<table>
+<% if @results.size > 0 %>
+  <h1>Interesting Results From Craigslist</h1>
+  <p>Often, stolen bikes will show up on Craigslist. Here are some relevant seeming bike postings near your location.</p>
+  <p>Anything sound familiar?</p>
+<table class="table table-striped">
   <thead>
     <tr>
-      <td>Title</td>
-      <td>Location</td>
-      <td>Link</td>
+      <th>Title</th>
+      <th>Location</th>
     </tr>
   </thead>
   <tbody>
     <% @results.each do |listing| %>
       <tr>
-        <td><%= listing["text"] %></td>
+        <td><%= link_to listing["text"], "http://burlington.craigslist.com#{listing["href"]}", target: "_blank" %></td>
         <td><%= listing["location"] %></td>
-        <td><%= link_to "[Link]", "http://burlington.craigslist.com#{listing["href"]}" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% else %>
+
+  <h1>Nothing Found</h1>
+  <p>Sadly we didn't see anything on Craigslist that might help you find your bike.</p>
+
+<% end %>
