@@ -45,11 +45,11 @@
     |__/      |________/|__/  |__/|__/  \__/|________/   |__/                       
   -->
 </head>
-<body>
+<body class="<%= controller_name %>">
   <%= render 'layouts/nav' %>
 
-	<div class="main">
-		<div class="container">
+  <div class="main">
+    <div class="container">
       <% flash.each do |name, msg| %>
         <% if msg.is_a?(String) %>
           <div class="alert alert-<%= name == :notice ? "success" : "danger" %>">
@@ -60,12 +60,12 @@
       <% end %>
 
       <%= yield %>
-      <footer>
-        <p style="font-size: small">&copy; <%= Time.now.year %> Team WinterMute</p>
-      </footer>
-		</div>
-	</div>
+    </div>
+  </div>
 
+  <footer>
+    <p style="font-size: small">&copy; <%= Time.now.year %> Team WinterMute</p>
+  </footer>
 
 </body>
 </html>
