@@ -14,17 +14,19 @@ class FoundForm
   validate :verify_contact_record
 
   delegate :serial, :frame_make, :frame_model, to: :bike
+  delegate :phone, :email, to: :contact
 
   def bike
     @bike ||= Bike.new
   end
 
   def contact
-    @contact ||= Contact.new(bike: contact)
+    @contact ||= Contact.new(bike: bike)
   end
 
   def submit(params)
     bike.attributes = params.slice(:serial, :frame_make, :frame_model)
+    contact.attributes = params.slice(:phone, :email)
 
     if valid?
       # Maybe search in our DB for the serial number here?
