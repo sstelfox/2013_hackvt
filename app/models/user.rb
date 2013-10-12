@@ -5,10 +5,10 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
 
   def self.authenticate(email, password)
-    user = first(email: email)
+    user = where(email: email).first
 
     return nil if user.nil?
-    return nil unless user.check_password(pass)
+    return nil unless user.check_password(password)
 
     user
   end
@@ -57,7 +57,7 @@ class User < ActiveRecord::Base
   #
   # @return [String]
   def generate_salt
-    self.salt = SCrypt::Engine.generate_salt(max_time: 0.75)
+    self.salt = SCrypt::Engine.generate_salt(max_time: 0.5)
   end
 end
 
