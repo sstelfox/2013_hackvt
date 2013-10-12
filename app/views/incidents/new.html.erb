@@ -1,5 +1,5 @@
 <h1>Incident Report</h1>
-<%= form_for @incident_form, url: (@incident_form.bike.new_record? ? report_stolen_path : report_stolen_bikes_path(@incident_form.bike)), html: {class: "form-horizontal"} do |f| %>
+<%= form_for @incident_form, url: (@incident_form.bike.new_record? ? report_stolen_path : report_stolen_bike_path(@incident_form.bike)), html: {class: "form-horizontal"} do |f| %>
   <fieldset class="well">
     <h4>Location Information</h4>
     <div class="form-group">
