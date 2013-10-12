@@ -21,8 +21,6 @@ BikeReports::Application.routes.draw do
   resources :bikes, except: [:show] do
     collection do
       get :report_stolen, as: :report_stolen, action: :report_stolen
-      get :search, as: :search, action: :search
-      post :search, as: :perform_search, action: :perform_search
     end
 
     member do

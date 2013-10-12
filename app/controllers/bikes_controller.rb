@@ -2,10 +2,12 @@ class BikesController < ApplicationController
   before_action :authenticate_user, except: [:search, :perform_search]
 
   def index
+    @title = "My Bikes"
     @bikes = current_user.bikes
   end
 
   def new
+    @title = "Register a Bike"
     @bike = Bike.new
   end
 
@@ -23,6 +25,7 @@ class BikesController < ApplicationController
 
   def edit
     @bike = Bike.find(params[:id])
+    @title = "Update bike: #{@bike.frame_make} #{@bike.frame_model}"
   end
 
   def update
@@ -39,14 +42,6 @@ class BikesController < ApplicationController
     @bike = Bike.find(params[:id])
     @bike.delete
     redirect_to bikes_path
-  end
-
-  def search
-    # TODO
-  end
-
-  def perform_search
-    # TODO
   end
 
   private

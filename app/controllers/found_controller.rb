@@ -1,5 +1,6 @@
 class FoundController < ApplicationController
   def new
+    @title = "Submit a Bike You Found"
     @found_form = FoundForm.new
   end
 
