@@ -51,11 +51,11 @@
 <div class="container">
 	<div class="row">
     <div id="map" alt="I'm a map!" style="height: 400px;"></div>
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+    <%= stylesheet_link_tag "leaflet.css" %>
     <!--[if lte IE 8]>
-      <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+      <%= stylesheet_link_tag "leaflet.ie.css" %>
     <![endif]-->
-    <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+    <%= javascript_include_tag "leaflet.js" %>
     <script>
       $(document).ready(function() {
         var map = L.map('map').setView([44.4758825, -73.212072], 12);
