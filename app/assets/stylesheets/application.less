@@ -162,10 +162,14 @@ form {
 }
 
 // TABLES
-.well {
-	table {
-		min-width:640px;
-		max-width:100%;
+.table {
+	min-width:640px;
+	max-width:100%;
+	a {
+		text-decoration:underline;
+		&.btn {
+			text-decoration:none;
+		}
 	}
 }
 
@@ -189,6 +193,39 @@ footer {
 		padding:.5em 0;
 		h1 {
 			font-size:1.5em;
+		}
+	}
+}
+
+// BIKE DETAIL
+.bike-detail {
+	h2 {
+		font-size:28/14em;
+		span {
+			display:block;
+			font-size:14/28em;
+			font-weight:700;
+			&.serial {
+				display:inline;
+				margin-left:.5em;
+			}
+		}
+	}
+	.status {
+		float:left;
+		font-size:18/14em;
+		width:90px;
+		margin-left:-105px;
+		text-align:center;
+		&.ok {
+			color:@brand-primary;
+		}
+		&.stolen {
+			color:@brand-danger;
+		}
+		i {
+			display:block;
+			font-size:3em;
 		}
 	}
 }
