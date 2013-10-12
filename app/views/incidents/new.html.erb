@@ -1,75 +1,95 @@
-<h1>Incident Report</h1>
-<%= form_for @incident_form, url: (@incident_form.bike.new_record? ? report_stolen_path : report_stolen_bike_path(@incident_form.bike)), html: {class: "form-horizontal"} do |f| %>
-  <fieldset class="well">
-    <h4>Location Information</h4>
-    <div class="form-group">
-      <%= f.label "Last seen" %>
-      <%= f.datetime_field :last_seen, class: 'form-control' %>
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-12">
+    <div class="header clearfix">
+      <h1>Incident Report</h1>
     </div>
-    <script type="text/javascript">
-      $(function(){
-        $('#incident_last_seen').datetimepicker();
-      });
-    </script>
-    <div class="form-group">
-      <%= f.label "Last known location" %>
-      <%= f.text_field :last_location, class: 'form-control', placeholder: "123 Example St. Town, Vermont 05405" %>
-    </div>
-  </fieldset>
-  <fieldset class="well">
-    <h4>Police Report</h4>
-    <div class="form-group">
-      <%= f.label "Incident report number" %>
-      <%= f.text_field :police_incident_number, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label "Reporting officer" %>
-      <%= f.text_field :officer_name, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label "Reporting station" %>
-      <% station_array = LAW_AGENCIES.map { |l| [l, l.parameterize] } %>
-      <%= f.select :station, station_array, class: 'form-control' %>
-    </div>
-  </fieldset>
-  <% if @incident_form.bike.new_record? %>
-    <fieldset class="well">
-      <h4>Bike Information</h4>
+    <%= form_for @incident_form, url: (@incident_form.bike.new_record? ? report_stolen_path : report_stolen_bike_path(@incident_form.bike)), html: {class: "form-horizontal well"} do |f| %>
+      <fieldset>
+        <div class="fieldset-header">
+          <h3>Location Information</h3>
+        </div>
+        <div class="form-group">
+          <%= f.label "Last seen on", class: "control-label col-lg-4" %>
+          <div class="controls col-lg-8">
+            <%= f.datetime_field :last_seen, class: 'form-control', placeholder: "Select a date and time" %>
+          </div>
+        </div>
+        <script type="text/javascript">
+          $(function(){
+            $('#incident_last_seen').datetimepicker();
+          });
+        </script>
+        <div class="form-group">
+          <%= f.label "Last known location", class: "control-label col-lg-4" %>
+          <div class="controls col-lg-8">
+            <%= f.text_field :last_location, class: 'form-control', placeholder: "123 Example St. Town, Vermont 05405" %>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <div class="fieldset-header">
+          <h3>Police Report</h3>
+        </div>
+        <div class="form-group">
+          <%= f.label "Incident number", class: "control-label col-lg-4" %>
+          <div class="controls col-lg-8">
+            <%= f.text_field :police_incident_number, class: 'form-control', placeholder: "Incident report number" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label "Reporting officer", class: "control-label col-lg-4" %>
+          <div class="controls col-lg-8">
+            <%= f.text_field :officer_name, class: 'form-control', placeholder: "Reporting officer's name" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label "Reporting station", class: "control-label col-lg-4" %>
+          <div class="controls col-lg-8">
+            <% station_array = LAW_AGENCIES.map { |l| [l, l.parameterize] } %>
+            <%= f.select :station, station_array, class: 'form-control' %>
+          </div>
+        </div>
+      </fieldset>
+      <% if @incident_form.bike.new_record? %>
+        <fieldset>
+          <h4>Bike Information</h4>
+          <div class="form-group">
+            <%= f.label "Serial Number", class: "col-lg-4 control-label" %>
+            <div class="controls col-lg-8">
+              <%= f.text_field :serial, class: "form-control", placeholder: "Serial number" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label "Frame Make", class: "col-lg-4 control-label" %>
+            <div class="controls col-lg-8">
+              <%= f.text_field :frame_make, class: "form-control", placeholder: "Frame make" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label "Frame Model", class: "col-lg-4 control-label" %>
+            <div class="controls col-lg-8">
+              <%= f.text_field :frame_model, class: "form-control", placeholder: "Frame model" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label "Color", class: "col-lg-4 control-label" %>
+            <div class="controls col-lg-8">
+              <%= f.text_field :color, class: "form-control", placeholder: "Color" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label "Description", class: "col-lg-4 control-label" %>
+            <div class="controls col-lg-8">
+              <%= f.text_area :description, rows: "5", class: "form-control", placeholder: "Description" %>
+            </div>
+          </div>
+        </fieldset>
+      <% end %>
       <div class="form-group">
-        <%= f.label "Serial Number", class: "col-lg-4 control-label" %>
-        <div class="controls col-lg-8">
-          <%= f.text_field :serial, class: "form-control", placeholder: "Serial number" %>
+        <div class="col-lg-8 col-lg-offset-4">
+          <%= f.submit 'Submit Report', class: "btn btn-primary" %>
         </div>
       </div>
-      <div class="form-group">
-        <%= f.label "Frame Make", class: "col-lg-4 control-label" %>
-        <div class="controls col-lg-8">
-          <%= f.text_field :frame_make, class: "form-control", placeholder: "Frame make" %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= f.label "Frame Model", class: "col-lg-4 control-label" %>
-        <div class="controls col-lg-8">
-          <%= f.text_field :frame_model, class: "form-control", placeholder: "Frame model" %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= f.label "Color", class: "col-lg-4 control-label" %>
-        <div class="controls col-lg-8">
-          <%= f.text_field :color, class: "form-control", placeholder: "Color" %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= f.label "Description", class: "col-lg-4 control-label" %>
-        <div class="controls col-lg-8">
-          <%= f.text_area :description, rows: "5", class: "form-control", placeholder: "Description" %>
-        </div>
-      </div>
-    </fieldset>
-  <% end %>
-  <div class="form-group">
-    <div class="col-lg-8 col-lg-offset-4">
-      <%= f.submit 'Report Stolen', class: "btn btn-primary" %>
-    </div>
+    <% end %>
   </div>
-<% end %>
+</div>
