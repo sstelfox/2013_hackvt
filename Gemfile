@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 gem 'therubyracer', platforms: :ruby
 gem 'rspec'
+gem 'craigslist'
 
 # Use LESS for stylesheets
 gem 'less-rails'
