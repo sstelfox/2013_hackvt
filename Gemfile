@@ -9,7 +9,6 @@ gem 'rspec'
 gem 'less-rails'
 
 gem 'sqlite3'
-gem 'devise'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
