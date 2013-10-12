@@ -30,7 +30,7 @@
           <%= bike.description %>
         </td>
         <td>
-          <a class="btn btn-xs btn-danger" href="#">Report Missing</a>
+          <%= link_to "Report Missing", report_stolen_bike(bike), class: "btn btn-xs btn-danger" %>
           <%= link_to raw("<i class='glyphicon glyphicon-edit'></i>"), edit_bike_path(bike), class:"btn btn-xs btn-default", title:"Edit bike" %>
           <%= link_to raw("<i class='glyphicon glyphicon-trash'></i>"), bike_path(bike), class:"btn btn-xs btn-warning", title:"Remove bike", confirm: "Are you sure?", method: :delete %>
         </td>
