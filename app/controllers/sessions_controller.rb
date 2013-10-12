@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 
     if @login_form.submit(login_params)
       session[:user_id] = @login_form.user.id
-      redirect_to root_path, notice: "You've been successfully logged in."
+      redirect_to bikes_path, notice: "You've been successfully logged in."
     else
       render "new"
     end
