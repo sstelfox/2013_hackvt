@@ -8,7 +8,7 @@
   <%= link_to "Safe Spokes VT", root_path, class: "navbar-brand" %>
   <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav">
-      <li><%= link_to "Register a Bicycle", new_bike_path %></li>
+      <li><%= link_to "Register a Bicycle", current_user ? new_bike_path : register_path %></li>
       <li><%= link_to "Report Incident", "#TODO" %></li>
       <li><%= link_to "Search by Serial", search_bikes_path %></li>
     </ul>
