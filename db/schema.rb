@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20131012031331) do
     t.datetime "last_seen",                              null: false
     t.string   "last_location",                          null: false
     t.string   "police_incident_number"
-    t.string   "police_officer_name"
-    t.string   "police_station"
+    t.string   "officer_name"
+    t.string   "station"
     t.boolean  "resolved",               default: false, null: false
     t.integer  "bike_id",                                null: false
     t.datetime "created_at"
