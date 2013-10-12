@@ -10,7 +10,7 @@ class RegistrationForm
     ActiveModel::Name.new(self, nil, "Registration")
   end
 
-  delegate :email, :password, :password_confirmation, to: :user
+  delegate :first_name, :last_name, :email, :password, :password_confirmation, to: :user
   validate :verify_user_attributes
 
   def user
@@ -18,7 +18,7 @@ class RegistrationForm
   end
 
   def submit(params)
-    user.attributes = params.slice(:email, :password, :password_confirmation)
+    user.attributes = params.slice(:first_name, :last_name, :email, :password, :password_confirmation)
 
     if valid?
       user.save!
