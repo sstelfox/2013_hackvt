@@ -1,5 +1,5 @@
 
-<% form_for(@login_form) do |f| %>
+<%= form_for(@login_form, url: login_path) do |f| %>
   <% if @login_form.errors.any? %>
     <ul>
       <% @login_form.errors.full_messages.each do |message| %>

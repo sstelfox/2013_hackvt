@@ -6,8 +6,8 @@ BikeReports::Application.routes.draw do
 
   get '/login', to: 'sessions#new', as: :login
   post '/login', to: 'sessions#create'
-  get '/logout', to: 'session#destroy'
-  delete '/logout', to: 'session#destroy'
+  get '/logout', to: 'sessions#destroy'
+  delete '/logout', to: 'sessions#destroy'
 
   resources :bikes do
     collection do
