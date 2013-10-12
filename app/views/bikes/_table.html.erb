@@ -20,7 +20,8 @@
           <%= bike.status.capitalize %>
         </td>
         <td>
-          <%= bike.frame_make %> / <%= bike.frame_model %>
+          <% show_link = "#{bike.frame_make} #{bike.frame_model}" %>
+          <%= link_to show_link, bike_path(bike) %>
         </td>
         <td>
           <%= bike.color %>

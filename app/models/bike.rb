@@ -1,8 +1,8 @@
-
 require 'securerandom'
 
 class Bike < ActiveRecord::Base
   validates :status, inclusion: { in: %w{ normal stolen found } }
+  validates_presence_of :frame_make
   validates_uniqueness_of :hash_id
 
   belongs_to :user
