@@ -6,43 +6,48 @@
       <p>Once you've done that, feel free to report it here and if the bike is in our system we can try to notify the owner.</p>
     </div>
     <%= form_for @found_form, url: found_bike_path, html: { class: 'form-horizontal well' } do |f| %>
-      <fieldset>
-        <div class="fieldset-header">
-          <h3>Vital Information</h3>
-          <p>Logging the serial number is the easiest way for us to match the bike with the owner.</p>
-        </div>
-        <div class="form-group">
-          <%= f.label "Serial Number", class: "col-lg-4 control-label" %>
-          <div class="controls col-lg-8">
-            <%= f.text_field :serial, class: "form-control", placeholder: "Serial number" %>
+      <% if @found_form.found? %>
+        <h2>Hey you found someone's bike!</h2>
+        <p>We can't begin to tell you how much we appreciate community support in helping recovering lost bikes. Please help us out by letting us know how we can get ahold of you to connect so we can pass that information on to the owner.</p>
+      <% else %>
+        <fieldset>
+          <div class="fieldset-header">
+            <h3>Vital Information</h3>
+            <p>Logging the serial number is the easiest way for us to match the bike with the owner.</p>
           </div>
-        </div>
-        <img class="img-responsive" src="http://placehold.it/1200x400&text=Where to find serials" alt="Where to find serials">
-      </fieldset>
-      <fieldset>
-        <div class="fieldset-header">
-          <h3>More information</h3>
-          <p>Some users don't know their serial, so if you can provide more informaiton we'll have a greater chance of connecting them with the bike you have found!</p>
-        </div>
-        <div class="form-group">
-          <%= f.label "Manufacturer", class: "col-lg-4 control-label" %>
-          <div class="controls col-lg-8">
-            <%= f.text_field :frame_make, class: "form-control", placeholder: "Manufacturer (e.g. Schwinn/Huffy/Trek)" %>
+          <div class="form-group">
+            <%= f.label "Serial Number", class: "col-lg-4 control-label" %>
+            <div class="controls col-lg-8">
+              <%= f.text_field :serial, class: "form-control", placeholder: "Serial number" %>
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <%= f.label "Model", class: "col-lg-4 control-label" %>
-          <div class="controls col-lg-8">
-            <%= f.text_field :frame_model, class: "form-control", placeholder: "Model (e.g. Hornet or Mark V)" %>
+          <img class="img-responsive" src="http://placehold.it/1200x400&text=Where to find serials" alt="Where to find serials">
+        </fieldset>
+        <fieldset>
+          <div class="fieldset-header">
+            <h3>More information</h3>
+            <p>Some users don't know their serial, so if you can provide more informaiton we'll have a greater chance of connecting them with the bike you have found!</p>
           </div>
-        </div>
-        <div class="form-group">
-          <%= f.label "Description", class: "col-lg-4 control-label" %>
-          <div class="controls col-lg-8">
-            <%= f.text_area :description, class: "form-control", rows: "3", placeholder: "Describe the bike (e.g. Has a sweet koala sticker)" %>
+          <div class="form-group">
+            <%= f.label "Manufacturer", class: "col-lg-4 control-label" %>
+            <div class="controls col-lg-8">
+              <%= f.text_field :frame_make, class: "form-control", placeholder: "Manufacturer (e.g. Schwinn/Huffy/Trek)" %>
+            </div>
           </div>
-        </div>
-      </fieldset>
+          <div class="form-group">
+            <%= f.label "Model", class: "col-lg-4 control-label" %>
+            <div class="controls col-lg-8">
+              <%= f.text_field :frame_model, class: "form-control", placeholder: "Model (e.g. Hornet or Mark V)" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label "Description", class: "col-lg-4 control-label" %>
+            <div class="controls col-lg-8">
+              <%= f.text_area :description, class: "form-control", rows: "3", placeholder: "Describe the bike (e.g. Has a sweet koala sticker)" %>
+            </div>
+          </div>
+        </fieldset>
+      <% end %>
       <fieldset>
         <div class="fieldset-header">
           <h3>Your Contact Information</h3>
