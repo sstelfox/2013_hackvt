@@ -28,6 +28,9 @@ BikeReports::Application.routes.draw do
     member do
       get '/report_stolen', to: 'incidents#new', as: :report_stolen
       post '/report_stolen', to: 'incidents#create'
+      
+      get '/transfer', to: 'transfers#new', as: :transfer
+      post '/transfer', to: 'transfers#create'
     end
   end
 end
