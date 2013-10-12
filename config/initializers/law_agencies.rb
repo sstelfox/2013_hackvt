@@ -22,7 +22,7 @@
      "Stowe Police Department", "Swanton Village Police Department",
      "Thetford Police Department", "Vergennes Police Department",
      "Vermont Capitol Police", "Vermont Department of Corrections",
-     "Vermont Department of Motor Vehicles Law Enforcement", "Vermont Department of Public Safety",
+     "Vermont DMV Law Enforcement", "Vermont Department of Public Safety",
      "Vermont Fish and Wildlife Department", "Vermont Game Wardens",
      "Vermont Secretary of State, Investigation Division", "Vermont State Police",
      "Washington County Sheriff's Office", "Waterbury Police Department",
