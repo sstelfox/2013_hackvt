@@ -29,7 +29,7 @@ class IncidentsController < ApplicationController
   def incident_params
     params.require(:incident)
     params[:incident].permit(:serial, :frame_make, :frame_model, :color,
-      :description,:last_seen, :last_location, :police_incident_number,
+      :description, :last_seen, :last_location, :police_incident_number,
       :officer_name, :station)
   end
 end
