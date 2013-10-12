@@ -3,6 +3,6 @@ require 'rqrcode'
 
 module BikesHelper
   def qrcode(bike)
-    RQRCode::QRCode.new(url_for(found_bike_path, h: bike.hash_id))
+    RQRCode::QRCode.new(found_bike_url(h: bike.hash_id), :size => 4)
   end
 end

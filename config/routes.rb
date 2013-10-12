@@ -26,9 +26,12 @@ BikeReports::Application.routes.draw do
     end
 
     member do
+      get '/craigslist', to: 'bikes#craigslist'
+      get '/qr', to: 'bikes#qr'
+
       get '/report_stolen', to: 'incidents#new', as: :report_stolen
       post '/report_stolen', to: 'incidents#create'
-      get '/craigslist', to: 'bikes#craigslist'
+
       get '/transfer', to: 'transfers#new', as: :transfer
       post '/transfer', to: 'transfers#create'
     end
