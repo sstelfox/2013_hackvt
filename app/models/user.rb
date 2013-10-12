@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   # @param [String] pass
   # @return [Boolean]
   def check_password(pass)
-    (crypt_pass == calc_hash(pass))
+    (crypt_hash == calc_hash(pass))
   end
 
   # Returns whether or not there is already a password on the user's instance,
@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   # @api public
   # @return [Boolean]
   def has_password?
-    (!!crypt_pass && !!salt)
+    (!!crypt_hash && !!salt)
   end
 
   # Override password setting, this is a virtual attribute and never gets saved
@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
   # @return [String]
   def password=(pass)
     generate_salt
-    self.crypt_pass = calc_hash(pass)
+    self.crypt_hash = calc_hash(pass)
   end
 
   protected
@@ -49,7 +49,7 @@ class User < ActiveRecord::Base
   # @param [String] pass
   # @return [String]
   def calc_hash(pass)
-    SCrypt::Engine.scrypt( pass, self[:salt], SCrypt::Engine.autodetect_cost(self[:salt]), 32).unpack('H*').first
+    SCrypt::Engine.scrypt(pass, salt, SCrypt::Engine.autodetect_cost(salt), 32).unpack('H*').first
   end
 
   # Set and generate a salt for use with SCrypt. The strength of any new
@@ -57,7 +57,7 @@ class User < ActiveRecord::Base
   #
   # @return [String]
   def generate_salt
-    self[:salt] = SCrypt::Engine.generate_salt(max_time: 0.75)
+    self.salt = SCrypt::Engine.generate_salt(max_time: 0.75)
   end
 end
 
