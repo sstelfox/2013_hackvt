@@ -1,15 +1,15 @@
 <div class="row">
 	<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-12">
-		<form class="form-horizontal well">
+    <%= form_for @found_form, url: found_bike_path, html: { class: 'form-horizontal well' } do |f| %>
 			<fieldset>
 				<div class="fieldset-header">
 					<h3>Vital Information</h3>
 					<p>Logging the serial number is the easiest way for us to match the bike with the owner</p>
 				</div>
 				<div class="form-group">
-					<label for="serial-number" class="col-lg-4 control-label">Serial Number</label>
+          <%= f.label "Serial Number", class: "col-lg-4 control-label" %>
 					<div class="controls col-lg-8">
-						<input type="text" class="form-control" id="serial-number" name="serial-number">
+            <%= f.text_field :serial, class: "form-control" %>
 					</div>
 				</div>
 				<img class="img-responsive" src="http://placehold.it/1200x400&text=Where to find serials" alt="Where to find serials">
@@ -55,6 +55,6 @@
 					</div>
 				</div>
 			</fieldset>
-		</form>
+    <% end %>
 	</div>
 </div>
