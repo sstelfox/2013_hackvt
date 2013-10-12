@@ -26,6 +26,29 @@ form {
 	}
 }
 
+.chosen-container-single .chosen-single {
+	.form-control;
+	div {
+		b {
+			background:transparent none;
+			position: relative;
+			display: inline-block;
+			font-family: 'FontAwesome';
+			font-style: normal;
+			font-weight: normal;
+			line-height: 32px;
+			-webkit-font-smoothing: antialiased;
+			&:before {
+				content:@caret-down;
+			}
+		}
+	}
+}
+
+.well {
+	overflow:visible;
+}
+
 // XL BUTTON
 .btn-xl {
 	white-space:normal;
@@ -51,7 +74,6 @@ form {
 
 // TABLES
 .well {
-	overflow-x:auto;
 	table {
 		min-width:640px;
 		max-width:100%;
