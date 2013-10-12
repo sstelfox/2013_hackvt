@@ -47,5 +47,23 @@
 			<p>Etiam nec pharetra ipsum. Fusce porta nisi a dapibus venenatis. Nunc at velit sit amet odio ultricies sollicitudin ut at arcu. Ut eget eleifend felis. Quisque eget accumsan nisl. Sed elit dolor, mattis eget molestie nec, mollis vel purus. Ut sit amet augue ornare, tempor lectus sed, tristique lorem.</p>
 		</div>
 	</div>
-	<!-- <img src="http://fc03.deviantart.net/fs20/f/2007/291/1/8/J14_aircraft_carrier_landing_by_huihui1979.jpg" /> -->
 </div>
+<div class="container">
+	<div class="row">
+    <div id="map" alt="I'm a map!" style="height: 400px;"></div>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+    <![endif]-->
+    <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+    <script>
+      $(document).ready(function() {
+        var map = L.map('map').setView([44.4758825, -73.212072], 12);
+        L.tileLayer('http://{s}.tile.cloudmade.com/7f07076c4c6642b3bb4024153353afed/997/256/{z}/{x}/{y}.png', {
+          maxZoom: 18
+        }).addTo(map);
+      });
+    </script>
+  </div>
+</div>
+<!-- <img src="http://fc03.deviantart.net/fs20/f/2007/291/1/8/J14_aircraft_carrier_landing_by_huihui1979.jpg" /> -->
