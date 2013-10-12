@@ -1,5 +1,7 @@
 
 class SearchController < ApplicationController
+  before_action :authenticate_user
+
   def new
     @title = "Enter a new search"
     @search_form = SearchForm.new

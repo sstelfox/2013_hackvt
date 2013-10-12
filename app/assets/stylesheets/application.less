@@ -29,6 +29,9 @@ h3 {
 
 h4 {
 	font-size:16/14em;
+	p+& {
+		margin-top:2em;
+	}
 }
 
 .container {
@@ -52,6 +55,10 @@ h4 {
 	.pages & {
 		padding:2em 0;
 	}
+	.navbar-brand {
+		font-weight:700;
+		font-size:24/14em;
+	}
 	.navbar-nav {
 		> li {
 			> a {
@@ -63,6 +70,10 @@ h4 {
 			}
 		}
 	}
+}
+
+.tips {
+	margin-top:2em;
 }
 
 // LANDING/FAQ PAGES
@@ -82,10 +93,20 @@ h4 {
 		text-align:center;
 		.colpad {
 			padding:3em 40px 2em;
+			a {
+				display:block;
+				text-decoration:none;
+			}
 		}
 		@media (max-width:@screen-md) {
 			.colpad {
 				padding:2em 20px 1em;
+			}
+		}
+		@media (max-width:@screen-sm) {
+			.colpad {
+				max-width:320px;
+				margin:0 auto;
 			}
 		}
 		p {
@@ -96,12 +117,15 @@ h4 {
 			font-size:60/14em;
 		}
 	}
+	.map-wrap {
+		padding:2em 0;
+	}
 }
 
 // FORMS
 form {
 	fieldset {
-		border-bottom:1px solid #ddd;
+		border-bottom:1px solid darken(@body-bg,15%);
 		padding:0 0 1em;
 		margin:0 0 1em;
 	}
@@ -133,8 +157,8 @@ form {
 }
 
 .well {
-	background:lighten(@body-bg,5%);
-	border-color:darken(@body-bg,5%);
+	background:darken(@body-bg,5%);
+	border-color:darken(@body-bg,10%);
 	.box-shadow(none);
 	overflow:visible;
 }
@@ -199,33 +223,39 @@ footer {
 
 // BIKE DETAIL
 .bike-detail {
-	h2 {
+	h2,h4 {
 		font-size:28/14em;
+		margin-top:0;
 		span {
 			display:block;
 			font-size:14/28em;
 			font-weight:700;
-			&.serial {
-				display:inline;
-				margin-left:.5em;
-			}
 		}
 	}
-	.status {
-		float:left;
+	h4 {
 		font-size:18/14em;
-		width:90px;
-		margin-left:-105px;
+		span {
+			font-size:14/18em;
+		}
+	}
+	.bike-actions {
 		text-align:center;
-		&.ok {
-			color:@brand-primary;
-		}
-		&.stolen {
-			color:@brand-danger;
-		}
-		i {
-			display:block;
-			font-size:3em;
+		.status {
+			font-size:18/14em;
+			margin:0 0 1em;
+			&.ok {
+				color:@brand-primary;
+			}
+			&.stolen {
+				color:@brand-danger;
+			}
+			i {
+				display:block;
+				font-size:3em;
+			}
+			p {
+				margin-top:.5em;
+			}
 		}
 	}
 }

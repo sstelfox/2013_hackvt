@@ -31,6 +31,6 @@ class IncidentsController < ApplicationController
     params[:incident].permit(:serial, :frame_make, :frame_model, :color,
       :description, :last_seen, :last_location, :police_incident_number,
       :officer_name, :station, :first_name, :last_name, :email, :password,
-      :password_confirmation)
+      :password_confirmation, :phone)
   end
 end

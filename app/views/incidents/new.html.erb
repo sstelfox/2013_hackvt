@@ -1,5 +1,10 @@
 <div class="row">
   <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-12">
+    <div class="alert alert-danger">
+      <h3><i class="glyphicon glyphicon-hand-right"></i> Before you submit a report here</h3>
+      <p>You should contact the local police department so they can make an official report of the incident. Have your bike's serial number ready!</p>
+      <p>Once you've done that, feel free to report it here.</p>
+    </div>
     <div class="header clearfix">
       <h1>Incident Report</h1>
     </div>
@@ -65,6 +70,12 @@
             <%= f.label "Last name", class: "col-lg-4 control-label" %>
             <div class="controls col-lg-8">
               <%= f.text_field :last_name, class: "form-control", placeholder: "Last name" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label "Phone #", class: "col-lg-4 control-label" %>
+            <div class="controls col-lg-8">
+              <%= f.text_field :phone, class: "form-control", placeholder: "802-867-5309" %>
             </div>
           </div>
           <div class="form-group">
