@@ -1,12 +1,13 @@
 class SessionsController < ApplicationController
   # GET /login
   def new
-    redirect_to :root_path if current_user
+    redirect_to root_path if current_user
     @login_form = LoginForm.new
   end
 
   # POST /login
   def create
+    redirect_to root_path if current_user
     @login_form = LoginForm.new
 
     if @login_form.submit(login_params)
