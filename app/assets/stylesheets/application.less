@@ -29,6 +29,9 @@ h3 {
 
 h4 {
 	font-size:16/14em;
+	p+& {
+		margin-top:2em;
+	}
 }
 
 .container {
@@ -63,6 +66,10 @@ h4 {
 			}
 		}
 	}
+}
+
+.tips {
+	margin-top:2em;
 }
 
 // LANDING/FAQ PAGES
@@ -106,6 +113,9 @@ h4 {
 			font-size:60/14em;
 		}
 	}
+	.map-wrap {
+		padding:2em 0;
+	}
 }
 
 // FORMS
@@ -143,8 +153,8 @@ form {
 }
 
 .well {
-	background:lighten(@body-bg,5%);
-	border-color:darken(@body-bg,5%);
+	background:darken(@body-bg,5%);
+	border-color:darken(@body-bg,10%);
 	.box-shadow(none);
 	overflow:visible;
 }
