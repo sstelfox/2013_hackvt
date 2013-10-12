@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-BikeReports::Application.config.secret_key_base = '2f300107e1c0e1ff987f14057a67f6a13541832b15e097393d18dc53dfba336c075fe7296881ef2500203405c2b7f3e5ca03561446e2013c600532e278fa99a6'
+BikeReports::Application.config.secret_key_base = '125fb6cf54dce018b2adbb2110d761fb9f8ee2bad7c875f4ce0e1ddf2f08f55ef2e506e04df7f807dc5e1ed689f7a15d1e5e06c35644f08c30a8a971763944e0'
