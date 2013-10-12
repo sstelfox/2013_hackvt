@@ -14,6 +14,10 @@ class TransferForm
     @bike = bike
   end
 
+  def bike
+    @bike
+  end
+
   def user
     @user ||= User.new
   end
@@ -22,8 +26,8 @@ class TransferForm
   delegate :first_name, :last_name, :email, to: :user
 
   def submit(params)
-    user.attributes = params.slice(:first_name, :last_name, :email)
-    bike.user = user
+    @user = User.where(email: params[:email]).first_or_create(params.slice(:first_name, :last_name))
+    bike.user = @user
 
     if valid?
       user.save!
