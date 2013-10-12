@@ -222,7 +222,7 @@ input[type="submit"].btn-block,input[type="reset"].btn-block,input[type="button"
 .fade{opacity:0;-webkit-transition:opacity 0.15s linear;transition:opacity 0.15s linear;}.fade.in{opacity:1;}
 .collapse{display:none;}.collapse.in{display:block;}
 .collapsing{position:relative;height:0;overflow:hidden;-webkit-transition:height 0.35s ease;transition:height 0.35s ease;}
-@font-face{font-family:'Glyphicons Halflings';src:url('../fonts/glyphicons-halflings-regular.eot');src:url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),url('../fonts/glyphicons-halflings-regular.woff') format('woff'),url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'),url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');}.glyphicon{position:relative;top:1px;display:inline-block;font-family:'Glyphicons Halflings';font-style:normal;font-weight:normal;line-height:1;-webkit-font-smoothing:antialiased;}
+@font-face{font-family:'Glyphicons Halflings';src:url('/assets/glyphicons-halflings-regular.eot');src:url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),url('/assets/glyphicons-halflings-regular.woff') format('woff'),url('/assets/glyphicons-halflings-regular.ttf') format('truetype'),url('/assets/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');}.glyphicon{position:relative;top:1px;display:inline-block;font-family:'Glyphicons Halflings';font-style:normal;font-weight:normal;line-height:1;-webkit-font-smoothing:antialiased;}
 .glyphicon-asterisk:before{content:"\2a";}
 .glyphicon-plus:before{content:"\2b";}
 .glyphicon-euro:before{content:"\20ac";}
@@ -865,7 +865,7 @@ form fieldset{border-bottom:1px solid #ddd;padding:0 0 1em;margin:0 0 1em;}
 form .fieldset-header{margin:0 0 2em;}form .fieldset-header h3{margin:0 0 .25em;}
 .btn-xl{white-space:normal;width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:2em 1em;font-size:2em;line-height:1;border-radius:20px;margin-bottom:1em;}@media (max-width:992px){.btn-xl{padding:1em 1em;font-size:2em;line-height:1;border-radius:20px;}}@media (max-width:768px){.btn-xl{padding:0.75em 0.5em;font-size:1.5em;line-height:1;border-radius:20px;margin-bottom:15px;}}
 .well{overflow-x:auto;}.well table{min-width:640px;max-width:100%;}
-footer{text-align:center;}
+footer{text-align:center;padding:2em 0 1em;}
 .main{padding-top:65px;}
 .header{padding:1em 0;}.header h1{font-size:2em;line-height:1;margin:0;}
 @media (max-width:768px){.header{padding:.5em 0;}.header h1{font-size:1.5em;}}
