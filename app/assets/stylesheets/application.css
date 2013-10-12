@@ -6087,6 +6087,17 @@ td.visible-print {
 .bootstrap-datetimepicker-widget ul.list-unstyled li.in div.timepicker div.timepicker-picker table.table-condensed tbody > tr > td {
   padding: 0px !important;
 }
+form fieldset {
+  border-bottom: 1px solid #ddd;
+  padding: 0 0 1em;
+  margin: 0 0 1em;
+}
+form .fieldset-header {
+  margin: 0 0 2em;
+}
+form .fieldset-header h3 {
+  margin: 0 0 .25em;
+}
 .btn-xl {
   white-space: normal;
   width: 100%;
