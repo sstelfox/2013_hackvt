@@ -15,7 +15,7 @@ class RegistrationController < ApplicationController
 
     if @registration_form.submit(registration_params)
       session[:user_id] = @registration_form.user.id
-      redirect_to @registration_form.user, notice: "Thank you for registering!"
+      redirect_to root_path, notice: "Thank you for registering!"
     else
       render "new"
     end
