@@ -2,9 +2,7 @@
 require 'scrypt'
 
 class User < ActiveRecord::Base
-  attr_accessible :email
-
-  validates :email, presence: true, unique: true
+  validates :email, presence: true, uniqueness: true
 
   def self.authenticate(email, password)
     user = first(email: email)
