@@ -8,6 +8,11 @@ class BikesController < ApplicationController
     @bikes = current_user.bikes
   end
 
+  def show
+    @bike = Bike.find(params[:id])
+    @title = "Bike Details: #{@bike.frame_make} #{@bike.frame_model}"
+  end
+
   def new
     @title = "Register a Bike"
     @bike = Bike.new
