@@ -13,5 +13,7 @@
 //= require jquery-1.10.2.min
 //= require bootstrap.min
 //= require bootstrap-datetimepicker
+//= require jquery.datatables.min
+//= require datatables.bootstrap
 //= require jquery_ujs
 //= require turbolinks
