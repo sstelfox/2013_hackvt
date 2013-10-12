@@ -20,7 +20,6 @@ group :doc do
 end
 
 gem 'thin'
-gem 'scrypt'
 
 # Debugger stuff
 group :development, :test do
