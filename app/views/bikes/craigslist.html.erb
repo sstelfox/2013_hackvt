@@ -1,20 +1,18 @@
 <% if @results.size > 0 %>
 <h1>Interesting Results</h1>
 <p>These are some relevant seeming bike postings near your location. Anything sound familiar?</p>
-<table class="table">
+<table class="table table-striped">
   <thead>
     <tr>
-      <td>Title</td>
-      <td>Location</td>
-      <td></td>
+      <th>Title</th>
+      <th>Location</th>
     </tr>
   </thead>
   <tbody>
     <% @results.each do |listing| %>
       <tr>
-        <td><%= listing["text"] %></td>
+        <td><%= link_to listing["text"], "http://burlington.craigslist.com#{listing["href"]}", target: "_blank" %></td>
         <td><%= listing["location"] %></td>
-        <td><%= link_to "[Link]", "http://burlington.craigslist.com#{listing["href"]}" %></td>
       </tr>
     <% end %>
   </tbody>

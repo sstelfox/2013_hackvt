@@ -11,6 +11,10 @@
 // Core variables and mixins
 @import "bootstrap";
 
+html {
+	background:@gray-darker;
+}
+
 a {
 	color:#003366;
 }
@@ -31,6 +35,7 @@ h4 {
 }
 
 .main {
+	padding-bottom:2em;
 	ul, ol {
 		li {
 			margin:0 0 2em;
@@ -41,6 +46,7 @@ h4 {
 // NAVBAR
 .navbar {
 	background:transparent;
+	border-color:darken(@body-bg,10%);
 	border-width:0 0 1px;
 	.pages & {
 		padding:2em 0;
@@ -51,8 +57,8 @@ h4 {
 				font-weight:700;
 				text-transform:uppercase;
 				border-radius:8px;
-				padding:8px 12px;
-				margin:7px 0;
+				padding:6px 10px;
+				margin:9px 0;
 			}
 		}
 	}
@@ -67,8 +73,8 @@ h4 {
 		margin-bottom:2em;
 	}
 	.callouts {
-		background:#fff;
-		border:1px solid darken(@body-bg,3%);
+		background:darken(@body-bg,5%);
+		border:1px solid darken(@body-bg,10%);
 		border-width:1px 0;
 	}
 	.callout {
@@ -126,8 +132,9 @@ form {
 }
 
 .well {
-	background:rgba(255,255,255,0.5);
-	border-color:darken(@body-bg,3%);
+	background:lighten(@body-bg,5%);
+	border-color:darken(@body-bg,5%);
+	.box-shadow(none);
 	overflow:visible;
 }
 
@@ -163,7 +170,7 @@ form {
 
 // FOOTER
 footer {
-	background:@gray-dark;
+	background:@gray-darker;
 	color:@gray-lighter;
 	text-align:center;
 	padding:2em 0 1em;

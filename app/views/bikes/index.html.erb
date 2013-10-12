@@ -4,21 +4,19 @@
     <div class="header clearfix">
       <% if @bikes.size > 0 %>
         <div class="header-actions pull-right">
-          <%= link_to raw("<i class='glyphicon glyphicon-plus'></i> Add New Bike"), new_bike_path, class: "btn btn-success" %>
+          <%= link_to raw("<i class='icon icon-plus'></i> Add New Bike"), new_bike_path, class: "btn btn-success" %>
         </div>
         <h1 class="pull-left">My Bikes</h1>
       <% else %>
         <h1 class="pull-left">Get Started</h1>
       <% end %>
     </div>
-    <div class="well">
-      <% if @bikes.size > 0 %>
-        <%= render 'bikes/table' %>
-      <% else %>
-        <h4>Looks like you haven't added anything yet.</h4>
-        <%= link_to "Register a bike", new_bike_path, class: "btn btn-lg btn-success" %>
-      <% end %>
-    </div>
+    <% if @bikes.size > 0 %>
+      <%= render 'bikes/table' %>
+    <% else %>
+      <h4>Looks like you haven't added anything yet.</h4>
+      <%= link_to "Register a bike", new_bike_path, class: "btn btn-lg btn-success" %>
+    <% end %>
 
   </div>
 </div>

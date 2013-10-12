@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table table-striped">
   <thead>
     <tr>
       <th width="80">Status</th>
@@ -7,8 +7,7 @@
       <th width="15%">Serial #</th>
       <th>Description</th>
       <th></th>
-      <th width="180"></th>
-      <th width="220"></th>
+      <th width="120"></th>
     </tr>
   </thead>
   <tbody>
@@ -33,9 +32,9 @@
         <td>
           <% if current_user && bike.user == current_user %>
             <% if bike.status == "stolen" %>
-              <%= link_to "Report Returned", report_returned_bike_path(bike), class: "btn btn-xs btn-success" %>
+              <%= link_to raw("<i class='icon-ok'></i> Report Returned"), report_returned_bike_path(bike), class: "btn btn-xs btn-success" %>
             <% else %>
-              <%= link_to "Report Stolen", report_stolen_bike_path(bike), class: "btn btn-xs btn-danger" %>
+              <%= link_to raw("<i class='icon-warning-sign'></i> Report Stolen"), report_stolen_bike_path(bike), class: "btn btn-xs btn-danger" %>
             <% end %>
           <% end %>
         </td>

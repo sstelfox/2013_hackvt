@@ -23,22 +23,22 @@
 // Brand colors
 // -------------------------
 
-@brand-primary:         #428bca;
-@brand-success:         #5cb85c;
-@brand-warning:         #f0ad4e;
-@brand-danger:          #d9534f;
-@brand-info:            #5bc0de;
+@brand-primary:         #006633;
+@brand-success:         #006633;
+@brand-warning:         #ff6600;
+@brand-danger:          #990000;
+@brand-info:            #66cccc;
 
 // Scaffolding
 // -------------------------
 
-@body-bg:               #f8f8ff;
-@text-color:            @gray-dark;
+@body-bg:               #fffAf0;
+@text-color:            @gray-darker;
 
 // Links
 // -------------------------
 
-@link-color:            @brand-primary;
+@link-color:            #660033;
 @link-hover-color:      darken(@link-color, 15%);
 
 // Typography
@@ -99,11 +99,11 @@
 @table-condensed-cell-padding:       5px;
 
 @table-bg:                           transparent; // overall background-color
-@table-bg-accent:                    #f9f9f9; // for striping
-@table-bg-hover:                     #f5f5f5;
+@table-bg-accent:                    darken(@body-bg,2%); // for striping
+@table-bg-hover:                     darken(@body-bg,3%);
 @table-bg-active:                    @table-bg-hover;
 
-@table-border-color:                 #ddd; // table and cell border
+@table-border-color:                 darken(@body-bg,10%); // table and cell border
 
 
 // Buttons
@@ -243,7 +243,7 @@
 // Basics of a navbar
 @navbar-height:                    50px;
 @navbar-margin-bottom:             @line-height-computed;
-@navbar-default-color:             #555;
+@navbar-default-color:             @gray-dark;
 @navbar-default-bg:                #f8f8f8;
 @navbar-default-border:            darken(@navbar-default-bg, 6.5%);
 @navbar-border-radius:             0;
@@ -251,11 +251,11 @@
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 
 // Navbar links
-@navbar-default-link-color:                #555;
+@navbar-default-link-color:                @navbar-default-color;
 @navbar-default-link-hover-color:          #fff;
-@navbar-default-link-hover-bg:             #006633;
+@navbar-default-link-hover-bg:             @brand-primary;
 @navbar-default-link-active-color:         #fff;
-@navbar-default-link-active-bg:            #006633;
+@navbar-default-link-active-bg:            @brand-primary;
 @navbar-default-link-disabled-color:       #ccc;
 @navbar-default-link-disabled-bg:          transparent;
 
