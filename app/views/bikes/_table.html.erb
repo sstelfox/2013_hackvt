@@ -8,6 +8,7 @@
       <th>Description</th>
       <th></th>
       <th width="180"></th>
+      <th width="220"></th>
     </tr>
   </thead>
   <tfoot>
@@ -40,10 +41,11 @@
           <% end %>
         </td>
         <td>
-          <% if current_user && bike.user == current_user %>
-            <%= link_to raw("<i class='glyphicon glyphicon-edit'></i>"), edit_bike_path(bike), class:"btn btn-xs btn-default", title:"Edit bike" %>
-            <%= link_to raw("<i class='glyphicon glyphicon-transfer'></i>"), transfer_bike_path(bike), class:"btn btn-xs btn-warning", title:"Transfer bike" %>
-            <%= link_to raw("<i class='glyphicon glyphicon-trash'></i>"), bike_path(bike), class:"btn btn-xs btn-warning", title:"Remove bike", data: {confirm: "Are you sure?"}, method: :delete %>
+            <%= link_to "Report Stolen", report_stolen_bike_path(bike), class: "btn btn-xs btn-danger" %>
+            <%= link_to raw("<i class='icon icon-edit'></i>"), edit_bike_path(bike), class:"btn btn-xs btn-default", title:"Edit bike" %>
+            <%= link_to raw("<i class='icon icon-qrcode'></i>"), qr_bike_path(bike), class:"btn btn-xs btn-default", title:"Print QR Code" %>
+            <%= link_to raw("<i class='icon icon-retweet'></i>"), transfer_bike_path(bike), class:"btn btn-xs btn-warning", title:"Transfer bike" %>
+            <%= link_to raw("<i class='icon icon-trash'></i>"), bike_path(bike), class:"btn btn-xs btn-warning", title:"Remove bike", data: {confirm: "Are you sure?"}, method: :delete %>
         <% end %>
         </td>
       </tr>

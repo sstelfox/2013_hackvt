@@ -12,7 +12,7 @@ class Bike < ActiveRecord::Base
 
   def generate_hash_id
     begin
-      self.hash_id = SecureRandom.hex(16)
+      self.hash_id = SecureRandom.hex(10)
     end while !!self.class.exists?(hash_id: hash_id)
   end
 end

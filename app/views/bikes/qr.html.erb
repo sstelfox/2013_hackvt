@@ -1,0 +1,57 @@
+
+<!-- This should probably go in the site styles... -->
+<style type="text/css">
+  table.qr {
+    border-width: 0;
+    border-style: none;
+    border-color: #0000ff;
+    border-collapse: collapse;
+  }
+
+  table.qr td {
+    border-width: 0;
+    border-style: none;
+    border-color: #0000ff;
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0;
+    width: 10px;
+    height: 10px;
+  }
+
+  table.qr td.black { background-color: #000; }
+  table.qr td.white { background-color: #fff; }
+
+  .padded-dot {
+    padding: 20px;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px dashed black;
+    margin: auto;
+  }
+</style>
+ 
+<div class="row">
+  <div class="col-lg-5">
+    <div class="padded-dot">
+      <% qrc = qrcode(@bike) %>
+      <table class="qr">
+        <% qrc.modules.each_index do |x| -%>
+          <tr>
+            <% qrc.modules.each_index do |y| -%>
+              <% if qrc.dark?(x,y) -%>
+                <td class="black"/>
+              <% else -%>
+                <td class="white"/>
+              <% end -%>
+            <% end -%>
+          </tr>
+        <% end -%>
+      </table>
+    </div>
+  </div>
+  <div class="col-lg-7">
+    <h1>Unique Bike Identifier</h1>
+    <p>Print this out! Cut it up (on the dotted line)! Tape it on your bike (we recommended packing tape)! Lost? Stolen? Someone could find this and save your bacon!</p>
+  </div>
+</div>
