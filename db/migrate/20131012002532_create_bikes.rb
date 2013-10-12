@@ -4,12 +4,10 @@ class CreateBikes < ActiveRecord::Migration
       t.string :serial
       t.string :frame_make
       t.string :frame_model
-      t.string :size
       t.string :color
-      t.string :location_found
-      t.string :status
-      t.text :descriptions
+      t.text :description
 
+      t.string :status
       t.references :user
 
       t.timestamps

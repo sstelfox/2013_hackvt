@@ -1,3 +1,11 @@
+<%= form_for @bike, html: {class: "form-horizontal well"} do |f| %>
+  <div class="form-group">
+    <%= f.label "Serial Number", class: "col-lg-4 control-label" %>:
+    <div class="controls col-lg-8">
+      <%= f.text_field :serial, class: "form-control" %><br />
+    </div>
+  </div>
+<% end %> 
 <form class="form-horizontal well">
   <div class="form-group">
     <label class="col-lg-4 control-label" for="bike_serial">Serial Number</label>
