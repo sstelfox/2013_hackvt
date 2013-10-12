@@ -11,8 +11,22 @@
 // Core variables and mixins
 @import "twitter/bootstrap";
 
+// FORMS
+form {
+	fieldset {
+		border-bottom:1px solid #ddd;
+		padding:0 0 1em;
+		margin:0 0 1em;
+	}
+	.fieldset-header {
+		margin:0 0 2em;
+		h3 {
+			margin:0 0 .25em;
+		}
+	}
+}
 
-// STYLES
+// XL BUTTON
 .btn-xl {
 	white-space:normal;
 	width:100%;
@@ -28,14 +42,28 @@
 	}
 }
 
-.main {
-	padding-top:70px;
+// FOOTER
+footer {
+	text-align:center;
 }
 
+// OFFSET LAYOUT FOR NAV
+.main {
+	padding-top:60px;
+}
+
+// VIEW HEADER
 .header {
 	padding:1em 0;
 	h1 {
+		font-size:2em;
 		line-height:1;
 		margin:0;
+	}
+	@media (max-width:@screen-sm) {
+		padding:.5em 0;
+		h1 {
+			font-size:1.5em;
+		}
 	}
 }

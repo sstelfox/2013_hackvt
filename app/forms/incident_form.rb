@@ -12,6 +12,10 @@ class IncidentForm
 
   validate :verify_bike_record
   validate :verify_incident_record
+    
+ delegate :serial, :frame_make, :frame_model, :color, :description, to: :bike
+ delegate :last_seen, :last_location, :police_incident_number, :officer_name,
+   :station, to: :incident
 
   def initialize(bike = nil)
     @bike = bike unless bike.nil?
@@ -27,9 +31,11 @@ class IncidentForm
 
   def submit(params)
     bike.attributes = params.slice(:serial, :frame_make, :frame_model, :color, :description)
-    incident.attributes = params.slice(:last_seen, :last_location, :police_incident_number, :officer_name, :station)
+    incident.attributes = params.slice(:last_location, :police_incident_number, :officer_name, :station)
+    incident.last_seen = Time.strptime(params[:last_seen], '%m/%d/%Y %H:%M')
 
     if valid?
+      bike.status = "stolen"
       bike.save!
       incident.save!
       true

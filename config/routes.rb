@@ -1,6 +1,9 @@
 BikeReports::Application.routes.draw do
   root 'pages#landing'
 
+  get '/search', to: 'search#new', as: :search
+  post '/search', to: 'search#create'
+
   get '/register', to: 'registration#new', as: :registrations
   post '/register', to: 'registration#create'
 
@@ -13,6 +16,7 @@ BikeReports::Application.routes.draw do
   post '/report_stolen', to: 'incidents#create'
 
   get '/found_bike', to: 'found#new', as: :found_bike
+  post '/found_bike', to: 'found#create'
 
   resources :bikes, except: [:show] do
     collection do
