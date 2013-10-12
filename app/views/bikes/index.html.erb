@@ -16,28 +16,30 @@
         <tfoot>
         </tfoot>
         <tbody>
+          <% @bikes.each do |bike| %>
           <tr>
             <td>
-
+              <%= bike.status %>
             </td>
             <td>
-              Trek Montana
+              <%= bike.frame_make %> / <%= bike.frame_model %>
             </td>
             <td>
-              Orange
+              <%= bike.color %>
             </td>
             <td>
-              129PDS30234902384AN283
+              <%= bike.serial %>
             </td>
             <td>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              <%= bike.description %>
             </td>
             <td>
-              <a class="btn btn-xs btn-default" href="#">Update</a>
+              <%= link_to "Update", edit_bike_path(bike), class:"btn btn-xs btn-default" %>
               <a class="btn btn-xs btn-danger" href="#">Report Missing</a>
-              <a class="btn btn-xs btn-warning" href="#">Remove</a>
+              <%= link_to "Remove", bike_path(bike), class:"btn btn-xs btn-warning", confirm: "Are you sure?", method: :delete%>
             </td>
           </tr>
+          <% end %>
         </tbody>
       </table>
     </div>
