@@ -1,47 +1,40 @@
 <div class="row">
-  <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-12">
+  <div class="col-lg-8 col-lg-offset-2 col-md-8 col-offset-md-2 col-sm-8 col-sm-offset-2 col-12">
     <div class="bike-detail row">
-      <div class="col-lg-9 col-lg-offset-3">
-        <div class="bike-header">
-          <% if current_user && @bike.user == current_user %>
-            <% if @bike.status == "stolen" %>
-            <div class="status <%= @bike.status %>">
-              <i class="icon icon-warning-sign"></i>
-              Bike reported <%= @bike.status %>
-              <%= link_to "Report as Returned", report_returned_bike_path(@bike), class: "btn btn-xs btn-success" %>
-              <%= link_to "Search Craigslist", craigslist_bike_path(@bike), class: "btn btn-xs btn-warning" %>
-            </div>
-            <% else %>
-            <div class="status ok">
-              <i class="icon icon-ok"></i>
-              Bike ok
-              <%= link_to "Report as Stolen", report_stolen_bike_path(@bike), class: "btn btn-xs btn-danger" %>
-            </div>
-            <% end %>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-12 bike-actions">
+         <% if current_user && @bike.user == current_user %>
+          <% if @bike.status == "stolen" %>
+          <div class="status <%= @bike.status %>">
+            <i class="icon icon-warning-sign"></i>
+            Bike reported <%= @bike.status %><br>
+            <p>
+              <%= link_to "Report Returned", report_returned_bike_path(@bike), class: "btn btn-block btn-success" %>
+              <%= link_to "Search Craigslist", craigslist_bike_path(@bike), class: "btn btn-block btn-warning" %>
+            </p>
+          </div>
+          <% else %>
+          <div class="status ok">
+            <i class="icon icon-ok"></i>
+            Bike ok<br>
+            <p>
+              <%= link_to "Report Stolen", report_stolen_bike_path(@bike), class: "btn btn-block btn-danger" %>
+            </p>
+          </div>
           <% end %>
+        <% end %>
+      </div>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-12">
+        <div class="bike-header">
           <h2>
             <span>Make/Model</span>
             <%= @bike.frame_make %> <%= @bike.frame_model %>
-            <span class="serial">SN <%= @bike.serial %></span>
+          </h2>
+          <h2>
+            <span class="serial">Serial Number</span>
+            <%= @bike.serial %>
           </h2>
         </div>
-        <div class="bike-actions">
-          <% if current_user && @bike.user == current_user %>
-            <%= link_to raw("<i class='icon icon-edit'></i>"), edit_bike_path(@bike), class:"btn btn-xs btn-default", title:"Edit bike" %>
-            <%= link_to raw("<i class='icon icon-qrcode'></i>"), qr_bike_path(@bike), class:"btn btn-xs btn-default", title:"Print QR Code" %>
-            <%= link_to raw("<i class='icon icon-exchange'></i>"), transfer_bike_path(@bike), class:"btn btn-xs btn-warning", title:"Transfer bike" %>
-            <%= link_to raw("<i class='icon icon-trash'></i>"), bike_path(@bike), class:"btn btn-xs btn-warning", title:"Remove bike", data: {confirm: "Are you sure?"}, method: :delete %>
-          <% end %>
-        </div>
         <div class="bike-attributes">
-          <p>
-            <strong>Owner Name</strong><br>
-            <%= @bike.user.first_name %> <%= @bike.user.last_name %>
-          </p>
-          <p>
-            <strong>Owner Email</strong><br>
-            <%= @bike.user.email %>
-          </p>
           <p>
             <strong>Color</strong><br>
             <%= @bike.color %>
@@ -50,6 +43,22 @@
             <strong>Description</strong><br>
             <%= @bike.description %>
           </p>
+          <p>
+            <strong>Owner Name</strong><br>
+            <%= @bike.user.first_name %> <%= @bike.user.last_name %>
+          </p>
+          <p>
+            <strong>Owner Email</strong><br>
+            <%= @bike.user.email %>
+          </p>
+        </div>
+        <div class="bike-actions">
+          <% if current_user && @bike.user == current_user %>
+            <%= link_to raw("<i class='icon icon-edit'></i> Edit Bike"), edit_bike_path(@bike), class:"btn btn-block btn-default", title:"Edit bike" %>
+            <%= link_to raw("<i class='icon icon-qrcode'></i> Print QR Code"), qr_bike_path(@bike), class:"btn btn-block btn-default", title:"Print QR Code" %>
+            <%= link_to raw("<i class='icon icon-exchange'></i> Transfer Bike"), transfer_bike_path(@bike), class:"btn btn-block btn-warning", title:"Transfer bike" %>
+            <%= link_to raw("<i class='icon icon-trash'></i> Remove Bike"), bike_path(@bike), class:"btn btn-block btn-warning", title:"Remove bike", data: {confirm: "Are you sure?"}, method: :delete %>
+          <% end %>
         </div>
       </div>
     </div>
