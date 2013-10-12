@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20131012031331) do
   add_index "incidents", ["bike_id"], name: "index_incidents_on_bike_id"
 
   create_table "users", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "email",      null: false
     t.string   "password"
     t.datetime "created_at"
