@@ -5930,16 +5930,14 @@ td.visible-print {
   padding: 4px;
   margin-top: 1px;
   z-index: 3000;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
   border-radius: 4px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
   /*.dow {
   border-top: 1px solid #ddd !important;
   }*/
 
+}
+.bootstrap-datetimepicker-widget .btn {
+  padding: 6px;
 }
 .bootstrap-datetimepicker-widget:before {
   content: '';
@@ -6001,12 +5999,7 @@ td.visible-print {
   text-align: center;
   width: 20px;
   height: 20px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
   border-radius: 4px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
 }
 .bootstrap-datetimepicker-widget td.day:hover,
 .bootstrap-datetimepicker-widget td.hour:hover,
@@ -6021,66 +6014,9 @@ td.visible-print {
 }
 .bootstrap-datetimepicker-widget td.active,
 .bootstrap-datetimepicker-widget td.active:hover {
-  color: #428bca;
-  background-color: #425eca;
-  border-color: #357ebd;
+  background-color: #428bca;
   color: #fff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-}
-.bootstrap-datetimepicker-widget td.active:hover,
-.bootstrap-datetimepicker-widget td.active:hover:hover,
-.bootstrap-datetimepicker-widget td.active:focus,
-.bootstrap-datetimepicker-widget td.active:hover:focus,
-.bootstrap-datetimepicker-widget td.active:active,
-.bootstrap-datetimepicker-widget td.active:hover:active,
-.bootstrap-datetimepicker-widget td.active.active,
-.bootstrap-datetimepicker-widget td.active:hover.active,
-.open .dropdown-toggle.bootstrap-datetimepicker-widget td.active,
-.open .dropdown-toggle.bootstrap-datetimepicker-widget td.active:hover {
-  color: #428bca;
-  background-color: #324cb1;
-  border-color: #285e8e;
-}
-.bootstrap-datetimepicker-widget td.active:active,
-.bootstrap-datetimepicker-widget td.active:hover:active,
-.bootstrap-datetimepicker-widget td.active.active,
-.bootstrap-datetimepicker-widget td.active:hover.active,
-.open .dropdown-toggle.bootstrap-datetimepicker-widget td.active,
-.open .dropdown-toggle.bootstrap-datetimepicker-widget td.active:hover {
-  background-image: none;
-}
-.bootstrap-datetimepicker-widget td.active.disabled,
-.bootstrap-datetimepicker-widget td.active:hover.disabled,
-.bootstrap-datetimepicker-widget td.active[disabled],
-.bootstrap-datetimepicker-widget td.active:hover[disabled],
-fieldset[disabled] .bootstrap-datetimepicker-widget td.active,
-fieldset[disabled] .bootstrap-datetimepicker-widget td.active:hover,
-.bootstrap-datetimepicker-widget td.active.disabled:hover,
-.bootstrap-datetimepicker-widget td.active:hover.disabled:hover,
-.bootstrap-datetimepicker-widget td.active[disabled]:hover,
-.bootstrap-datetimepicker-widget td.active:hover[disabled]:hover,
-fieldset[disabled] .bootstrap-datetimepicker-widget td.active:hover,
-fieldset[disabled] .bootstrap-datetimepicker-widget td.active:hover:hover,
-.bootstrap-datetimepicker-widget td.active.disabled:focus,
-.bootstrap-datetimepicker-widget td.active:hover.disabled:focus,
-.bootstrap-datetimepicker-widget td.active[disabled]:focus,
-.bootstrap-datetimepicker-widget td.active:hover[disabled]:focus,
-fieldset[disabled] .bootstrap-datetimepicker-widget td.active:focus,
-fieldset[disabled] .bootstrap-datetimepicker-widget td.active:hover:focus,
-.bootstrap-datetimepicker-widget td.active.disabled:active,
-.bootstrap-datetimepicker-widget td.active:hover.disabled:active,
-.bootstrap-datetimepicker-widget td.active[disabled]:active,
-.bootstrap-datetimepicker-widget td.active:hover[disabled]:active,
-fieldset[disabled] .bootstrap-datetimepicker-widget td.active:active,
-fieldset[disabled] .bootstrap-datetimepicker-widget td.active:hover:active,
-.bootstrap-datetimepicker-widget td.active.disabled.active,
-.bootstrap-datetimepicker-widget td.active:hover.disabled.active,
-.bootstrap-datetimepicker-widget td.active[disabled].active,
-.bootstrap-datetimepicker-widget td.active:hover[disabled].active,
-fieldset[disabled] .bootstrap-datetimepicker-widget td.active.active,
-fieldset[disabled] .bootstrap-datetimepicker-widget td.active:hover.active {
-  background-color: #425eca;
-  border-color: #357ebd;
 }
 .bootstrap-datetimepicker-widget td.disabled,
 .bootstrap-datetimepicker-widget td.disabled:hover {
@@ -6096,54 +6032,15 @@ fieldset[disabled] .bootstrap-datetimepicker-widget td.active:hover.active {
   float: left;
   margin: 2px;
   cursor: pointer;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
   border-radius: 4px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
 }
 .bootstrap-datetimepicker-widget td span:hover {
   background: #eeeeee;
 }
 .bootstrap-datetimepicker-widget td span.active {
-  color: #428bca;
-  background-color: #425eca;
-  border-color: #357ebd;
+  background-color: #428bca;
   color: #fff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-}
-.bootstrap-datetimepicker-widget td span.active:hover,
-.bootstrap-datetimepicker-widget td span.active:focus,
-.bootstrap-datetimepicker-widget td span.active:active,
-.bootstrap-datetimepicker-widget td span.active.active,
-.open .dropdown-toggle.bootstrap-datetimepicker-widget td span.active {
-  color: #428bca;
-  background-color: #324cb1;
-  border-color: #285e8e;
-}
-.bootstrap-datetimepicker-widget td span.active:active,
-.bootstrap-datetimepicker-widget td span.active.active,
-.open .dropdown-toggle.bootstrap-datetimepicker-widget td span.active {
-  background-image: none;
-}
-.bootstrap-datetimepicker-widget td span.active.disabled,
-.bootstrap-datetimepicker-widget td span.active[disabled],
-fieldset[disabled] .bootstrap-datetimepicker-widget td span.active,
-.bootstrap-datetimepicker-widget td span.active.disabled:hover,
-.bootstrap-datetimepicker-widget td span.active[disabled]:hover,
-fieldset[disabled] .bootstrap-datetimepicker-widget td span.active:hover,
-.bootstrap-datetimepicker-widget td span.active.disabled:focus,
-.bootstrap-datetimepicker-widget td span.active[disabled]:focus,
-fieldset[disabled] .bootstrap-datetimepicker-widget td span.active:focus,
-.bootstrap-datetimepicker-widget td span.active.disabled:active,
-.bootstrap-datetimepicker-widget td span.active[disabled]:active,
-fieldset[disabled] .bootstrap-datetimepicker-widget td span.active:active,
-.bootstrap-datetimepicker-widget td span.active.disabled.active,
-.bootstrap-datetimepicker-widget td span.active[disabled].active,
-fieldset[disabled] .bootstrap-datetimepicker-widget td span.active.active {
-  background-color: #425eca;
-  border-color: #357ebd;
 }
 .bootstrap-datetimepicker-widget td span.old {
   color: #999999;
@@ -6173,8 +6070,7 @@ fieldset[disabled] .bootstrap-datetimepicker-widget td span.active.active {
 .bootstrap-datetimepicker-widget thead tr:first-child th:hover {
   background: #eeeeee;
 }
-.input-append.date .add-on i,
-.input-prepend.date .add-on i {
+.input-group.date .input-group-addon span {
   display: block;
   cursor: pointer;
   width: 16px;
@@ -6187,6 +6083,9 @@ fieldset[disabled] .bootstrap-datetimepicker-widget td span.active.active {
 .bootstrap-datetimepicker-widget.left-oriented:after {
   left: auto;
   right: 7px;
+}
+.bootstrap-datetimepicker-widget ul.list-unstyled li.in div.timepicker div.timepicker-picker table.table-condensed tbody > tr > td {
+  padding: 0px !important;
 }
 .main {
   padding-top: 70px;

@@ -7,6 +7,11 @@
 				<label for="incident-datetime">Date/Time</label>
 				<input type="datetime" class="form-control" id="incident-time" name="incident-time">
 			</div>
+			<script type="text/javascript">
+				$(function(){
+					$('#incident-time').datetimepicker();
+				});
+			</script>
 			<div class="form-group">
 				<label for="incident-location">Last Known Location</label>
 				<input type="text" class="form-control" id="incident-location" name="incident-location" placeholder="123 Example St. Town, Vermont 05405">
