@@ -11,7 +11,7 @@ class RegistrationForm
   end
 
   delegate :first_name, :last_name, :email, :password, :password_confirmation, to: :user
-  delegate :serial, :frame_make, :frame_model, :color, :description
+  delegate :serial, :frame_make, :frame_model, :color, :description, to: :bike
   validate :verify_user_attributes
 
   def user
