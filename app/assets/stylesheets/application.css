@@ -1129,10 +1129,12 @@ textarea.chosen-container-single .chosen-single{height:auto;}
 footer{background:#222222;color:#eeeeee;text-align:center;padding:2em 0 1em;}
 .header{padding:1em 0;}.header h1{font-size:2em;line-height:1;margin:0;}
 @media (max-width:768px){.header{padding:.5em 0;}.header h1{font-size:1.5em;}}
-.bike-detail h2{font-size:2em;}.bike-detail h2 span{display:block;font-size:0.5em;font-weight:700;}.bike-detail h2 span.serial{display:inline;margin-left:.5em;}
-.bike-detail .status{float:left;font-size:1.2857142857142858em;width:90px;margin-left:-105px;text-align:center;}.bike-detail .status.ok{color:#006633;}
-.bike-detail .status.stolen{color:#990000;}
-.bike-detail .status i{display:block;font-size:3em;}
+.bike-detail h2,.bike-detail h4{font-size:2em;margin-top:0;}.bike-detail h2 span,.bike-detail h4 span{display:block;font-size:0.5em;font-weight:700;}
+.bike-detail h4{font-size:1.2857142857142858em;}.bike-detail h4 span{font-size:0.7777777777777778em;}
+.bike-detail .bike-actions{text-align:center;}.bike-detail .bike-actions .status{font-size:1.2857142857142858em;margin:0 0 1em;}.bike-detail .bike-actions .status.ok{color:#006633;}
+.bike-detail .bike-actions .status.stolen{color:#990000;}
+.bike-detail .bike-actions .status i{display:block;font-size:3em;}
+.bike-detail .bike-actions .status p{margin-top:.5em;}
 #bike-table thead th.sorting_asc,#craigslist-records thead th.sorting_asc,#bike-table thead td.sorting_asc,#craigslist-records thead td.sorting_asc,#bike-table thead th.sorting_desc,#craigslist-records thead th.sorting_desc,#bike-table thead td.sorting_desc,#craigslist-records thead td.sorting_desc{background-color:#006633;cursor:pointer;color:white;}
 #bike-table thead th.sorting_asc .icon:before,#craigslist-records thead th.sorting_asc .icon:before,#bike-table thead td.sorting_asc .icon:before,#craigslist-records thead td.sorting_asc .icon:before{content:"\f0de";color:white;}
 #bike-table thead th.sorting_desc .icon:before,#craigslist-records thead th.sorting_desc .icon:before,#bike-table thead td.sorting_desc .icon:before,#craigslist-records thead td.sorting_desc .icon:before{content:"\f0dd";color:white;}
