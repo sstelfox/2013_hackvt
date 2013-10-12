@@ -1,12 +1,12 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Status</th>
-      <th>Make/Model</th>
-      <th>Color</th>
-      <th>Serial #</th>
+      <th width="80">Status</th>
+      <th width="20%">Make/Model</th>
+      <th width="10%">Color</th>
+      <th width="15%">Serial #</th>
       <th>Description</th>
-      <th>Actions</th>
+      <th width="160">Actions</th>
     </tr>
   </thead>
   <tfoot>
@@ -30,9 +30,9 @@
           <%= bike.description %>
         </td>
         <td>
-          <%= link_to "Update", edit_bike_path(bike), class:"btn btn-xs btn-default" %>
           <a class="btn btn-xs btn-danger" href="#">Report Missing</a>
-          <%= link_to "Remove", bike_path(bike), class:"btn btn-xs btn-warning", confirm: "Are you sure?", method: :delete%>
+          <%= link_to raw("<i class='glyphicon glyphicon-edit'></i>"), edit_bike_path(bike), class:"btn btn-xs btn-default", title:"Edit bike" %>
+          <%= link_to raw("<i class='glyphicon glyphicon-trash'></i>"), bike_path(bike), class:"btn btn-xs btn-warning", title:"Remove bike", confirm: "Are you sure?", method: :delete %>
         </td>
       </tr>
     <% end %>

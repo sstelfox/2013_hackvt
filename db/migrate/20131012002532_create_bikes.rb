@@ -7,7 +7,7 @@ class CreateBikes < ActiveRecord::Migration
       t.string :color
       t.text :description
 
-      t.string :status
+      t.string :status, default: "normal"
       t.references :user
 
       t.timestamps

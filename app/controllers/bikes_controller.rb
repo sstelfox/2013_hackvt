@@ -1,13 +1,8 @@
 class BikesController < ApplicationController
+  before_action :authenticate_user, except: [:search, :perform_search]
 
   def index
-    if current_user
-      @bikes = current_user.bikes
-    else
-      # TODO
-      @bikes = Bike.all
-    end
-
+    @bikes = current_user.bikes
   end
 
   def new
@@ -46,10 +41,6 @@ class BikesController < ApplicationController
     redirect_to bikes_path
   end
 
-  def report_stolen
-    # TODO
-  end
-
   def search
     # TODO
   end
@@ -59,6 +50,7 @@ class BikesController < ApplicationController
   end
 
   private
+
   def bike_params
     params.require(:bike)
     params[:bike].permit(:serial, :frame_make, :frame_model, :color, :description)

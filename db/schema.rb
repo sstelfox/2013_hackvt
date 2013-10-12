@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20131012031331) do
     t.string   "frame_model"
     t.string   "color"
     t.text     "description"
-    t.string   "status"
+    t.string   "status",      default: "normal"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
