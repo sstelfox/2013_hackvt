@@ -1,9 +1,9 @@
 class SearchForm
   include ActiveModel::Model
 
-  attr_accessor :serial
+  attr_accessor :query
 
-  validates_presence_of :serial
+  validates_presence_of :query
 
   def persisted?
     false
