@@ -5,12 +5,10 @@ gem 'rails', '4.0.0'
 gem 'therubyracer', platforms: :ruby
 gem 'rspec'
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+# Use LESS for stylesheets
+gem 'less-rails'
 
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
-
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
@@ -22,6 +20,9 @@ end
 gem 'thin'
 gem 'scrypt'
 
-# Use debugger
-gem 'debugger', group: [:development, :test]
+# Debugger stuff
+group :development, :test do
+  gem 'debugger'
+  gem 'pry-rails'
+end
 
