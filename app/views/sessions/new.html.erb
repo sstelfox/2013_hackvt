@@ -12,13 +12,13 @@
           </ul>
         <% end %>
         <div class="form-group">
-          <label for="login_email" class="col-lg-4 control-label">Email address</label>
+          <%= f.label "Email address", class: "col-lg-4 control-label" %>
           <div class="col-lg-8">
             <%= f.text_field :email, class: 'form-control', placeholder: 'Email address' %>
           </div>
         </div>
         <div class="form-group">
-          <label for="login_password" class="col-lg-4 control-label">Password</label>
+          <%= f.label "Password", class: "col-lg-4 control-label" %>
           <div class="col-lg-8">
             <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
           </div>
