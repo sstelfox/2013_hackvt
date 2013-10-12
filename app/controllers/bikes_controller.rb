@@ -1,7 +1,7 @@
 class BikesController < ApplicationController
 
   def index
-    @bikes = current_user.bikes
+#    @bikes = current_user.bikes
   end
 
   def new
@@ -46,4 +46,11 @@ class BikesController < ApplicationController
     # TODO
   end
 
+  def search
+    # TODO
+  end
+
+  def perform_search
+    # TODO
+  end
 end
