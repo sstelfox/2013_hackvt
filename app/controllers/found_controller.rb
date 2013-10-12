@@ -12,4 +12,9 @@ class FoundController < ApplicationController
       render :new
     end
   end
+
+  def found_params
+    params.require(:found_bike)
+    params[:found_bike].permit(:serial)
+  end
 end
