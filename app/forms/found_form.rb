@@ -35,7 +35,7 @@ class FoundForm
   end
 
   def submit(params)
-    bike.attributes = params.slice(:serial, :frame_make, :frame_model, :description)
+    bike.attributes = Contact.where(serial: serial).first_or_create(params.slice(:serial, :frame_make, :frame_model, :description))
     contact.attributes = params.slice(:phone, :email)
 
     if valid?

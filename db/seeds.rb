@@ -33,7 +33,7 @@ end
 8.times do
   u = User.all.sample
   Incident.create(bike: u.bikes.sample, last_seen: 10.minutes.ago,
-    last_location: "A place in burlington", latitude: "44.475#{rand(10000)}".to_f,
-    longitude: "-73.21#{rand(10000)}".to_f)
+    last_location: "A place in burlington", latitude: "44.4#{rand(10000)}".to_f,
+    longitude: "-73.2#{rand(10000)}".to_f)
 end
 
