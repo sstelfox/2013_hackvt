@@ -6,7 +6,7 @@
       <th width="10%">Color</th>
       <th width="15%">Serial #</th>
       <th>Description</th>
-      <th width="160">Actions</th>
+      <th width="180"></th>
     </tr>
   </thead>
   <tfoot>
@@ -15,7 +15,7 @@
     <% @bikes.each do |bike| %>
       <tr>
         <td>
-          <%= bike.status %>
+          <%= bike.status.capitalize %>
         </td>
         <td>
           <%= bike.frame_make %> / <%= bike.frame_model %>
@@ -30,7 +30,7 @@
           <%= bike.description %>
         </td>
         <td>
-          <a class="btn btn-xs btn-danger" href="#">Report Missing</a>
+          <%= link_to "Report Stolen", report_stolen_bike_path(bike), class: "btn btn-xs btn-danger" %>
           <%= link_to raw("<i class='glyphicon glyphicon-edit'></i>"), edit_bike_path(bike), class:"btn btn-xs btn-default", title:"Edit bike" %>
           <%= link_to raw("<i class='glyphicon glyphicon-trash'></i>"), bike_path(bike), class:"btn btn-xs btn-warning", title:"Remove bike", confirm: "Are you sure?", method: :delete %>
         </td>
