@@ -16,6 +16,6 @@ class FoundController < ApplicationController
 
   def found_params
     params.require(:found)
-    params[:found].permit(:serial, :frame_make, :frame_model, :phone, :email)
+    params[:found].permit(:serial, :frame_make, :frame_model, :phone, :email, :description)
   end
 end

@@ -13,7 +13,7 @@ class FoundForm
   validate :verify_bike_record
   validate :verify_contact_record
 
-  delegate :serial, :frame_make, :frame_model, to: :bike
+  delegate :serial, :frame_make, :frame_model, :description, to: :bike
   delegate :phone, :email, to: :contact
 
   def bike
@@ -25,7 +25,7 @@ class FoundForm
   end
 
   def submit(params)
-    bike.attributes = params.slice(:serial, :frame_make, :frame_model)
+    bike.attributes = params.slice(:serial, :frame_make, :frame_model, :description)
     contact.attributes = params.slice(:phone, :email)
 
     if valid?
