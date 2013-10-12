@@ -13,7 +13,7 @@ class FoundForm
   validate :verify_bike_record
   validate :verify_contact_record
 
-  delegate :serial, :frame_make, :frame_model, :description to: :bike
+  delegate :serial, :frame_make, :frame_model, :description, to: :bike
   delegate :phone, :email, to: :contact
 
   def bike
