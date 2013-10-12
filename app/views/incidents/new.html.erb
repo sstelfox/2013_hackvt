@@ -50,9 +50,48 @@
           </div>
         </div>
       </fieldset>
+      <% if @incident_form.user.new_record? %>
+        <fieldset>
+          <div class="fieldset-header">
+            <h3>About Yourself</h3>
+          </div>
+          <div class="form-group">
+            <%= f.label "First name", class: "col-lg-4 control-label" %>
+            <div class="controls col-lg-8">
+              <%= f.text_field :first_name, class: "form-control", placeholder: "First name" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label "Last name", class: "col-lg-4 control-label" %>
+            <div class="controls col-lg-8">
+              <%= f.text_field :last_name, class: "form-control", placeholder: "Last name" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label "Email address", class: "col-lg-4 control-label" %>
+            <div class="controls col-lg-8">
+              <%= f.email_field :email, class: "form-control", placeholder: "Email address" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label "Password", class: "col-lg-4 control-label" %>
+            <div class="controls col-lg-8">
+              <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label "Confirm password", class: "col-lg-4 control-label" %>
+            <div class="controls col-lg-8">
+              <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm password" %>
+            </div>
+          </div>
+        </fieldset>
+      <% end %>
       <% if @incident_form.bike.new_record? %>
         <fieldset>
-          <h4>Bike Information</h4>
+          <div class="fieldset-header">
+            <h3>Bike Information</h3>
+          </div>
           <div class="form-group">
             <%= f.label "Serial Number", class: "col-lg-4 control-label" %>
             <div class="controls col-lg-8">
