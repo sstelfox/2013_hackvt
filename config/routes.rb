@@ -1,5 +1,6 @@
 BikeReports::Application.routes.draw do
-  root 'pages#landing'
+  root 'bikes#index'
+
   resources :bikes do
     collection do
       get :search, as: :search, action: :search
