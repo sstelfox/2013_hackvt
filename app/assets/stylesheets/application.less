@@ -13,6 +13,21 @@
 
 
 // STYLES
+.btn-xl {
+	white-space:normal;
+	width:100%;
+	.box-sizing(border-box);
+	.button-size(2em; 1em; 2em; 1; 20px);
+	margin-bottom:1em;
+	@media (max-width:@screen-md) {
+		.button-size(1em; 1em; 2em; 1; 20px);
+	}
+	@media (max-width:@screen-sm) {
+		.button-size(.75em; .5em; 1.5em; 1; 20px);
+		margin-bottom:15px;
+	}
+}
+
 .main {
 	padding-top:70px;
 }

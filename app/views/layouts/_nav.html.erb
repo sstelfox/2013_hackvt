@@ -7,11 +7,6 @@
   </button>
   <%= link_to "Safe Spokes VT", root_path, class: "navbar-brand" %>
   <div class="navbar-collapse collapse">
-    <ul class="nav navbar-nav">
-      <li><%= link_to "Register a Bicycle", register_path %></li>
-      <li><%= link_to "Report Incident", "#TODO" %></li>
-      <li><%= link_to "Search by Serial", search_bikes_path %></li>
-    </ul>
     <ul class="nav navbar-nav navbar-right">
       <% if current_user %>
       <li><%= link_to "My Bikes", bikes_path %></li>
