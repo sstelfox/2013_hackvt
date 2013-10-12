@@ -82,10 +82,20 @@ h4 {
 		text-align:center;
 		.colpad {
 			padding:3em 40px 2em;
+			a {
+				display:block;
+				text-decoration:none;
+			}
 		}
 		@media (max-width:@screen-md) {
 			.colpad {
 				padding:2em 20px 1em;
+			}
+		}
+		@media (max-width:@screen-sm) {
+			.colpad {
+				max-width:320px;
+				margin:0 auto;
 			}
 		}
 		p {

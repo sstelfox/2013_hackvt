@@ -1109,8 +1109,8 @@ h4{font-size:1.1428571428571428em;}
 .pages .banner{padding:3em 0;}
 .pages .row{margin-bottom:2em;}
 .pages .callouts{background:#fff1d7;border:1px solid #ffe9bd;border-width:1px 0;}
-.pages .callout{text-align:center;}.pages .callout .colpad{padding:3em 40px 2em;}
-@media (max-width:992px){.pages .callout .colpad{padding:2em 20px 1em;}}.pages .callout p{margin:1em 0;}
+.pages .callout{text-align:center;}.pages .callout .colpad{padding:3em 40px 2em;}.pages .callout .colpad a{display:block;text-decoration:none;}
+@media (max-width:992px){.pages .callout .colpad{padding:2em 20px 1em;}}@media (max-width:768px){.pages .callout .colpad{max-width:320px;margin:0 auto;}}.pages .callout p{margin:1em 0;}
 .pages .callout .icon-xl{color:#990000;font-size:4.285714285714286em;}
 form fieldset{border-bottom:1px solid #ddd;padding:0 0 1em;margin:0 0 1em;}
 form .fieldset-header{margin:0 0 2em;}form .fieldset-header h3{margin:0 0 .25em;}
