@@ -2,7 +2,7 @@
 class RegistrationController < ApplicationController
   # GET /register
   def new
-    redirect_to root_path if current_user
+    redirect_to new_bike_path if current_user
 
     @registration_form = RegistrationForm.new
   end
