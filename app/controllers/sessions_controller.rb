@@ -1,3 +1,4 @@
+
 class SessionsController < ApplicationController
   # GET /login
   def new
@@ -24,7 +25,7 @@ class SessionsController < ApplicationController
       session[:user_id] = nil
       redirect_to root_path, notice: "You've been successfully logged out."
     else
-      redirect_to root_path, notice: "You need to be logged in before you can logout"
+      redirect_to root_path, alert: "You need to be logged in before you can logout"
     end
   end
 
@@ -33,3 +34,4 @@ class SessionsController < ApplicationController
     params[:login].permit(:email, :password)
   end
 end
+

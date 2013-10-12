@@ -1,3 +1,4 @@
+
 class SearchController < ApplicationController
   def new
     @title = "Enter a new search"
@@ -12,8 +13,10 @@ class SearchController < ApplicationController
   end
 
   private
+
   def search_form_params
     params.require(:search)
     params[:search].permit(:query)
   end
 end
+

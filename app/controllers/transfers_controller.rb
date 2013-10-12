@@ -1,11 +1,13 @@
 class TransfersController < ApplicationController
+  before_action :authenticate_user
+  
   def new
-    @bike = Bike.find(bike_id)
+    @bike = Bike.where(user: current_user).find(bike_id)
     @transfer_form = TransferForm.new(@bike)
   end
 
   def create
-    @bike = Bike.find(bike_id)
+    @bike = Bike.where(user: current_user).find(bike_id)
     @transfer_form = TransferForm.new(@bike)
   
     if @transfer_form.submit(transfer_params)
@@ -16,8 +18,7 @@ class TransfersController < ApplicationController
   end
 
   def bike_id
-    params.permit[:id]
-    params[:id]
+    params.permit(:id)[:id]
   end
 
   def transfer_params

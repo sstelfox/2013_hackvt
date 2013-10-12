@@ -5,19 +5,20 @@ class IncidentsController < ApplicationController
   # GET /bikes/1/report_stolen
   # GET /report_stolen
   def new
-    bike = !!bike_id ? Bike.find(bike_id) : nil
+    bike = !!bike_id ? Bike.where(user: current_user).find(bike_id) : nil
     @incident_form = IncidentForm.new(bike)
   end
 
   # POST /bikes/1/report_stolen
   # POST /report_stolen
   def create
-    bike = !!bike_id ? Bike.find(bike_id) : nil
+    bike = !!bike_id ? Bike.where(user: current_user).find(bike_id) : nil
     @incident_form = IncidentForm.new(bike)
 
     if @incident_form.submit(incident_params)
       redirect_to bikes_path, notice: "You incident has been reported"
     else
+      @last_seen = params[:incident][:last_seen]
       render "new"
     end
   end
