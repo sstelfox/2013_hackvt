@@ -8,6 +8,8 @@ gem 'rspec'
 # Use LESS for stylesheets
 gem 'less-rails'
 
+gem 'sqlite3'
+
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'turbolinks'
