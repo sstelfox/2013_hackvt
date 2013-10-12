@@ -7,11 +7,13 @@
     <div class="well">
       <%= form_for(@login_form, url: login_path, html: { class: 'form-horizontal' }) do |f| %>
         <% if @login_form.errors.any? %>
-          <ul>
-            <% @login_form.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
+          <div class="alert alert-danger">
+            <ul>
+              <% @login_form.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
         <div class="form-group">
           <%= f.label "Email address", class: "col-lg-3 control-label" %>

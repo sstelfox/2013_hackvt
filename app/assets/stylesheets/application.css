@@ -1128,6 +1128,7 @@ textarea.chosen-container-single .chosen-single{height:auto;}
 .well{background:#fff1d7;border-color:#ffe9bd;-webkit-box-shadow:none;box-shadow:none;overflow:visible;}
 .btn-xl{white-space:normal;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:1em 1em;font-size:2em;line-height:1;border-radius:10px;margin:0 auto 1em;}@media (max-width:992px){.btn-xl{padding:0.75em 0.5em;font-size:2em;line-height:1;border-radius:10px;}}@media (max-width:768px){.btn-xl{padding:0.75em 0.5em;font-size:1.5em;line-height:1;border-radius:10px;margin-bottom:15px;}}
 .alert h3{margin-top:0;}
+.alert ul,.alert ol,.alert ul li,.alert ol li{margin:0;}
 .table{min-width:640px;max-width:100%;}.table a{text-decoration:underline;}.table a.btn{text-decoration:none;}
 footer{background:#222222;color:#eeeeee;text-align:center;padding:2em 0 1em;}
 .header{padding:1em 0;}.header h1{font-size:2em;line-height:1;margin:0;}
@@ -1138,8 +1139,11 @@ footer{background:#222222;color:#eeeeee;text-align:center;padding:2em 0 1em;}
 .bike-detail .bike-actions .status.stolen{color:#990000;}
 .bike-detail .bike-actions .status i{display:block;font-size:3em;}
 .bike-detail .bike-actions .status p{margin-top:.5em;}
-#bike-table thead th.sorting_asc,#craigslist-records thead th.sorting_asc,#bike-table thead td.sorting_asc,#craigslist-records thead td.sorting_asc,#bike-table thead th.sorting_desc,#craigslist-records thead th.sorting_desc,#bike-table thead td.sorting_desc,#craigslist-records thead td.sorting_desc{background-color:#006633;cursor:pointer;color:white;}
-#bike-table thead th.sorting_asc .icon:before,#craigslist-records thead th.sorting_asc .icon:before,#bike-table thead td.sorting_asc .icon:before,#craigslist-records thead td.sorting_asc .icon:before{content:"\f0de";color:white;}
-#bike-table thead th.sorting_desc .icon:before,#craigslist-records thead th.sorting_desc .icon:before,#bike-table thead td.sorting_desc .icon:before,#craigslist-records thead td.sorting_desc .icon:before{content:"\f0dd";color:white;}
-#bike-table thead th.sorting,#craigslist-records thead th.sorting,#bike-table thead td.sorting,#craigslist-records thead td.sorting{cursor:pointer;}#bike-table thead th.sorting .icon:before,#craigslist-records thead th.sorting .icon:before,#bike-table thead td.sorting .icon:before,#craigslist-records thead td.sorting .icon:before{color:#222;content:"\f0dc";}
-#bike-table thead th .icon,#craigslist-records thead th .icon,#bike-table thead td .icon,#craigslist-records thead td .icon{font-family:'FontAwesome';font-style:normal;color:#222;}
+#bike-table thead th.sorting_asc,#craigslist-records thead th.sorting_asc,#bike-table thead td.sorting_asc,#craigslist-records thead td.sorting_asc,#bike-table thead th.sorting_desc,#craigslist-records thead th.sorting_desc,#bike-table thead td.sorting_desc,#craigslist-records thead td.sorting_desc{background-color:#ffe9bd;cursor:pointer;}
+#bike-table thead th.sorting_asc .icon:before,#craigslist-records thead th.sorting_asc .icon:before,#bike-table thead td.sorting_asc .icon:before,#craigslist-records thead td.sorting_asc .icon:before{content:"\f0de";}
+#bike-table thead th.sorting_desc .icon:before,#craigslist-records thead th.sorting_desc .icon:before,#bike-table thead td.sorting_desc .icon:before,#craigslist-records thead td.sorting_desc .icon:before{content:"\f0dd";}
+#bike-table thead th.sorting,#craigslist-records thead th.sorting,#bike-table thead td.sorting,#craigslist-records thead td.sorting{cursor:pointer;}#bike-table thead th.sorting .icon:before,#craigslist-records thead th.sorting .icon:before,#bike-table thead td.sorting .icon:before,#craigslist-records thead td.sorting .icon:before{content:"\f0dc";}
+#bike-table thead th .icon,#craigslist-records thead th .icon,#bike-table thead td .icon,#craigslist-records thead td .icon{font-family:'FontAwesome';font-style:normal;}
+.dataTables_wrapper table.table{margin-bottom:0 !important;}
+.dataTables_wrapper .row{border:1px solid #ffe9bd;border-width:1px 0;padding:.75em;margin:0;}.dataTables_wrapper .row .pagination{margin:0;}
+.pagination>.active>a,.pagination>.active>span,.pagination>.active>a:hover,.pagination>.active>span:hover,.pagination>.active>a:focus,.pagination>.active>span:focus{background-color:#ffe0a3;border-color:#ffcf71;color:#222222;font-weight:700;}
