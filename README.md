@@ -1,79 +1,40 @@
-#Fathomless Twilight
+# Safes Spokes VT
 
-## Team IPs:
+Safe Spokes VT is a proof of concept bike registration tool built by Team
+Wintermute during the [Hack VT 2013](http://hackvt.com) hackathon. 
 
-* Gabe: 192.168.8.131 
-* Sam: 192.168.8.122
-* Jared: 192.168.8.136
-* Zach: 192.168.8.141
+This app was built by:
 
-## Features:
+* [Sam Stelfox](https://github.com/sstelfox)
+* [Jared Fullerton](https://github.com/jfullerton)
+* [Gabe Koss](https://github.com/granolocks)
+* [Zach Lincoln](https://github.com/zlincolnBHG)
 
-### Phase 1 -- Shops and Cops
+## Caveat
 
-* Bike Shops can report  serials #s / Owner contact info
-* Police can report stolen bikes
-* Police can report found bikes
-* Polices and Bike Shops can search for bikes by stolen status or serial
+This app was build in about 24 hours and is NOT production ready.
 
-### Phase 2 -- Public Users
+The punch list of Long term tasks in order to make it production ready:
 
-* Users submit reports for stolen bikes
-* Users can "find" a bike
-* Map showing theft locations and  locations of found bikes
+* Better adminstration of Police and Bike Shop users
+* Build out backend email notification behavior
+* Handle Geolocation more appropriately
+* Add an activity stream of Found / Stolen Bike activity
+* Add a production ready DB such as Postgres
 
-## IA / Sections
-
-### Phase 1
-* Request Account Page
-* Login Page
-* Search / Filter Bikes Page (for cops + shops)
-* Report Stolen Bike Form (for cops)
-* Register Sold Bike Pages (for shops)
-* User Management Page
-
-### Phase 2
-
-* Map Page
-* Report Stolen Bike
-* Report Found Bike
-
-## Data Models
-
-### User
-
-* Type
-* First name
-* Last name
-* Email
-* Phone
-
-## Bike
-
-* Serial
-* Make 
-* Model
-* Size
-* Color
-* Status (Found/Normal/Stolen)
-* Location Found
-* Location Stolen
-* First name
-* Last name
-* Email
-* Phone
-
-## Data Sources
+## Open Data 
 
 * [List of Bike Shops in VT](http://www.vtbikeped.org/resources/biking-in-vermont/bike-shops.html)
-* [List of Law Enforcement Agencies](http://en.wikipedia.org/wiki/List_of_law_enforcement_agencies_in_Vermont)
 * [Craigslist Bikes for Sale](http://burlington.craigslist.org/bia/)
+* [Google Maps API](https://developers.google.com/maps/)
+* [Wikipedia Bike SVG](http://en.wikipedia.org/wiki/File:Bicycle.svg)
+* [List of Law Enforcement Agencies](http://en.wikipedia.org/wiki/List_of_law_enforcement_agencies_in_Vermont)
 
-## References
+## Other References
 
-* http://www.7dvt.com/2013steal-wheels-would-police-registry-reduce-bike-thefts-burlington
-* http://www.police.ci.burlington.vt.us/LeadinHtml_VtBurlingtonPd/start-report.html
-* http://www.localmotion.org/bikeregistry
-* http://stolenbicycleregistry.com/
-* https://docs.google.com/document/d/1ZBJnq1XuDJ7JaYZj6Kfgsh0evfdNiNxusqmbkOGpIsw/edit?hl=en&authkey=CKnBgNkG
+* [Seven Days Article on Need for VT bike registry](http://www.7dvt.com/2013steal-wheels-would-police-registry-reduce-bike-thefts-burlington)
+* [Burlington Police Report](http://www.police.ci.burlington.vt.us/LeadinHtml_VtBurlingtonPd/start-report.html)
+* [Prior Art: Localmotion Bike Registry (defunct)](http://www.localmotion.org/bikeregistry)
+* [Prior Art: Stolen Bike Registry (defunct)](http://stolenbicycleregistry.com/)
+* [Research Document on This Sort of App](https://docs.google.com/document/d/1ZBJnq1XuDJ7JaYZj6Kfgsh0evfdNiNxusqmbkOGpIsw/edit?hl=en&authkey=CKnBgNkG)
 

@@ -13,26 +13,23 @@
 <div class="callouts">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-4 col-md-4 col-12 callout">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-12 callout">
 				<div class="colpad">
-					<h3>I Lost My Bike</h3>
-					<i class="icon icon-xl icon-frown"></i>
+					<%= link_to raw("<h3>I Lost My Bike</h3><i class='icon icon-xl icon-frown'></i>"), report_stolen_path %>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, nobis, harum eos distinctio odit illum dolores pariatur veniam excepturi id!</p>
 					<%= link_to "Report a missing bike", report_stolen_path, class:"btn btn-primary" %>
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-4 col-12 callout">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-12 callout">
 				<div class="colpad">
-					<h3>I Found a Bike</h3>
-					<i class="icon icon-xl icon-eye-open"></i>
+					<%= link_to raw("<h3>I Found a Bike</h3><i class='icon icon-xl icon-eye-open'></i>"), found_bike_path %>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, nobis, harum eos distinctio odit illum dolores pariatur veniam excepturi id!</p>
 					<%= link_to "Report a found bike", found_bike_path, class:"btn btn-primary" %>
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-4 col-12 callout">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-12 callout">
 				<div class="colpad">
-					<h3>Search for a bike</h3>
-					<i class="icon icon-xl icon-search"></i>
+					<%= link_to raw("<h3>Search for a bike</h3><i class='icon icon-xl icon-search'></i>"), search_path %>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, nobis, harum eos distinctio odit illum dolores pariatur veniam excepturi id!</p>
 					<%= link_to "Search Bikes", search_path, class:"btn btn-primary" %>
 				</div>
@@ -42,40 +39,41 @@
 </div>
 <div class="container">
 	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-12">
+		<div class="col-lg-6 col-md-6 col-sm-12 col-12">
 			<h2>About Safe Spokes VT</h2>
 			<p>Etiam nec pharetra ipsum. Fusce porta nisi a dapibus venenatis. Nunc at velit sit amet odio ultricies sollicitudin ut at arcu. Ut eget eleifend felis. Quisque eget accumsan nisl. Sed elit dolor, mattis eget molestie nec, mollis vel purus. Ut sit amet augue ornare, tempor lectus sed, tristique lorem.</p>
 		</div>
+		<div class="col-lg-6 col-md-6 col-sm-12 col-12">
+			<div class="map-wrap">
+				<h3>Recent Incidents</h3>
+				<div id="map" alt="I'm a map!" style="height: 400px;"></div>
+				<%= stylesheet_link_tag "leaflet.css" %>
+				<!--[if lte IE 8]>
+					<%= stylesheet_link_tag "leaflet.ie.css" %>
+				<![endif]-->
+				<%= javascript_include_tag "leaflet.js" %>
+				<script>
+					$(document).ready(function() {
+						var map = L.map('map').setView([44.4758825, -73.212072], 12);
+
+						L.tileLayer('http://{s}.tile.cloudmade.com/7f07076c4c6642b3bb4024153353afed/997/256/{z}/{x}/{y}.png', {
+							maxZoom: 18
+						}).addTo(map);
+
+						var sadIcon = L.icon({
+							iconUrl: '<%= image_path "sad.png" %>',
+							iconSize: [32, 32],
+							iconAnchor: [16, 16]
+						});
+
+						var locations = <%= JSON.generate(@incidents.map { |i| [i.latitude, i.longitude] }) %>;
+						for(var i in locations) {
+							L.marker(locations[i], {icon: sadIcon}).addTo(map);
+						};
+					});
+				</script>
+			</div>
+		</div>
 	</div>
-</div>
-<div class="container">
-	<div class="row">
-    <div id="map" alt="I'm a map!" style="height: 400px;"></div>
-    <%= stylesheet_link_tag "leaflet.css" %>
-    <!--[if lte IE 8]>
-      <%= stylesheet_link_tag "leaflet.ie.css" %>
-    <![endif]-->
-    <%= javascript_include_tag "leaflet.js" %>
-    <script>
-      $(document).ready(function() {
-        var map = L.map('map').setView([44.4758825, -73.212072], 12);
-
-        L.tileLayer('http://{s}.tile.cloudmade.com/7f07076c4c6642b3bb4024153353afed/997/256/{z}/{x}/{y}.png', {
-          maxZoom: 18
-        }).addTo(map);
-
-        var sadIcon = L.icon({
-          iconUrl: '<%= image_path "sad.png" %>',
-          iconSize: [32, 32],
-          iconAnchor: [16, 16]
-        });
-
-        var locations = <%= JSON.generate(@incidents.map { |i| [i.latitude, i.longitude] }) %>;
-        for(var i in locations) {
-          L.marker(locations[i], {icon: sadIcon}).addTo(map);
-        };
-      });
-    </script>
-  </div>
 </div>
 <!-- <img src="http://fc03.deviantart.net/fs20/f/2007/291/1/8/J14_aircraft_carrier_landing_by_huihui1979.jpg" /> -->
