@@ -193,33 +193,37 @@ footer {
 	}
 }
 
-#datatable{
+#bike-table{
 	thead{
 		th,td{
 			&.sorting_asc, &.sorting_desc {
 				background-color: black;
 				cursor:pointer;
+				color: white;
 			}
 			&.sorting_asc {
 				.icon:before {
 					content:"\f0de";
+					color: white;
 				}
 			}
 			&.sorting_desc {
 				.icon:before {
 					content:"\f0dd";
+					color: white;
 				}
 			}
 			&.sorting {
 				cursor:pointer;
 				.icon:before {
-					color: white;
+					color: #222;
 					content:"\f0dc";
 				}
 			}
 			.icon {
 				font-family:'FontAwesome';
 				font-style:normal;
+				color: #222;
 			}
 		}
 	}

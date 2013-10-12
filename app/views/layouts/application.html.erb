@@ -67,20 +67,28 @@
   </footer>
   <script type="text/javascript">
     $(function(){
-      $('#bike-list').dataTable({
-        "aaSorting": [[0, 'desc']],
+      //seven columns
+        //status
+        //make/model
+        //color
+        //serial
+        //description
+        //report action
+        //other action
+      $('#bike-table').dataTable({
+        "aaSorting": [[1, 'desc']],
         "bJQueryUI": false,
         "bAutoWidth": false,
-        "iDisplayLength": 50
-        // "aoColumns": [
-        //   { "bSortable":false, "bSearchable": false },
-        //   { "sTitle": "Quiz Name <i class='icon'></i>" },
-        //   { "sTitle": "Short Description <i class='icon'></i>" },
-        //   { "sTitle": "Date Taken <i class='icon'></i>" },
-        //   { "sTitle": "Grade <i class='icon'></i>" },
-        //   { "bSortable":false, "bSearchable": false },
-        //   { "bSortable":false, "bSearchable": false }
-        // ]
+        "iDisplayLength": 50,
+        "aoColumns": [
+          { "sTitle": "Status <i class='icon'></i>" },
+          { "sTitle": "Make/Model <i class='icon'></i>" },
+          { "sTitle": "Color <i class='icon'></i>" },
+          { "sTitle": "Serial <i class='icon'></i>" },
+          { "sTitle": "Description <i class='icon'></i>" },
+          { "bSortable":false, "bSearchable": false },
+          { "bSortable":false, "bSearchable": false }
+        ]
       });
     });
   </script>
