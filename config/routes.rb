@@ -16,6 +16,7 @@ BikeReports::Application.routes.draw do
   post '/report_stolen', to: 'incidents#create'
 
   get '/found_bike', to: 'found#new', as: :found_bike
+  post '/found_bike', to: 'found#create'
 
   resources :bikes, except: [:show] do
     collection do
