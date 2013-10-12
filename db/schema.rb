@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20131012073017) do
   create_table "incidents", force: true do |t|
     t.datetime "last_seen",                              null: false
     t.string   "last_location",                          null: false
+    t.float    "latitude"
+    t.float    "longitude"
     t.string   "police_incident_number"
     t.string   "officer_name"
     t.string   "station"
