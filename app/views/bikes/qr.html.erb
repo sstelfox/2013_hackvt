@@ -21,19 +21,37 @@
 
   table.qr td.black { background-color: #000; }
   table.qr td.white { background-color: #fff; }
+
+  .padded-dot {
+    padding: 20px;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px dashed black;
+    margin: auto;
+  }
 </style>
  
-<% qrc = qrcode(@bike) %>
-<table class="qr">
-  <% qrc.modules.each_index do |x| -%>
-    <tr>
-      <% qrc.modules.each_index do |y| -%>
-        <% if qrc.dark?(x,y) -%>
-          <td class="black"/>
-        <% else -%>
-          <td class="white"/>
+<div class="row">
+  <div class="col-lg-5">
+    <div class="padded-dot">
+      <% qrc = qrcode(@bike) %>
+      <table class="qr">
+        <% qrc.modules.each_index do |x| -%>
+          <tr>
+            <% qrc.modules.each_index do |y| -%>
+              <% if qrc.dark?(x,y) -%>
+                <td class="black"/>
+              <% else -%>
+                <td class="white"/>
+              <% end -%>
+            <% end -%>
+          </tr>
         <% end -%>
-      <% end -%>
-    </tr>
-  <% end -%>
-</table>
+      </table>
+    </div>
+  </div>
+  <div class="col-lg-7">
+    <h1>Unique Bike Identifier</h1>
+    <p>Print this out! Cut it up (on the dotted line)! Tape it on your bike (we recommended packing tape)! Lost? Stolen? Someone could find this and save your bacon!</p>
+  </div>
+</div>

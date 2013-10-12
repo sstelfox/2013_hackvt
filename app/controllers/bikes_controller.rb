@@ -51,6 +51,19 @@ class BikesController < ApplicationController
     @results = Craigslist.burlington.bikes.query(@bike.frame_make).fetch
   end
 
+  def report_returned
+    @bike = Bike.find(params[:id])
+    @bike.status = "normal"
+    @bike.save
+    redirect_to bikes_path, notice: "Glad you found your bike!"
+  end
+
+  def destroy
+    @bike = Bike.find(params[:id])
+    @bike.delete
+    redirect_to bikes_path
+  end
+
   def qr
     @bike = current_user.bikes.find(params[:id])
     render :qr
