@@ -42,4 +42,8 @@ class BikesController < ApplicationController
     @bike.delete
   end
 
+  def report_stolen
+    # TODO
+  end
+
 end
