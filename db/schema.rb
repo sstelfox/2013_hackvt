@@ -20,8 +20,6 @@ ActiveRecord::Schema.define(version: 20131012002532) do
     t.string   "size"
     t.string   "color"
     t.string   "location_found"
-    t.string   "status"
-    t.text     "descriptions"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

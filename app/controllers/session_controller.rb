@@ -21,9 +21,9 @@ class SessionController < ApplicationController
   def destroy
     if current_user
       session[:user_id] = nil
-      redirect_to :root_path, notice: "You've been successfully logged out."
+      redirect_to root_path, notice: "You've been successfully logged out."
     else
-      redirect_to :root_path, notice: "You need to be logged in before you can logout"
+      redirect_to root_path, notice: "You need to be logged in before you can logout"
     end
   end
 
