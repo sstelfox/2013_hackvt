@@ -1,20 +1,20 @@
 <div class="row">
   <div class="col-lg-12 col-12">
-    <div class="header clearfix">
-      <% if @bikes.size > 0 %>
+    <% if @bikes.size > 0 %>
+      <div class="header clearfix">
         <div class="header-actions pull-right">
           <%= link_to "Add New Bike", new_bike_path, class: "btn btn-success" %>
         </div>
-      <% end %>
-      <h1 class="pull-left">My Bikes</h1>
-    </div>
+        <h1 class="pull-left">My Bikes</h1>
+      </div>
+    <% end %>
     <div class="well">
       <% if @bikes.size > 0 %>
         <%= render 'bikes/table' %>
       <% else %>
-        <h3>Please register a bike!</h3>
-        <p>Uh oh! Looks like you haven't registered a bike yet.  Get started <%= link_to "here", new_bike_path %>.</p>
-
+        <h1>Get started</h1>
+        <p>Looks like you haven't added anything yet.</p>
+        <%= link_to "Register a bike", new_bike_path, class: "btn btn-lg btn-success" %>
       <% end %>
     </div>
   </div>
