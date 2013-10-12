@@ -1,5 +1,5 @@
 BikeReports::Application.routes.draw do
-  root 'bikes#index'
+  root 'pages#landing'
 
   get '/register', to: 'registration#new', as: :registrations
   post '/register', to: 'registration#create'
