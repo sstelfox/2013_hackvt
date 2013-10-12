@@ -18,8 +18,7 @@ class TransfersController < ApplicationController
   end
 
   def bike_id
-    params.permit[:id]
-    params[:id]
+    params.permit(:id)[:id]
   end
 
   def transfer_params
