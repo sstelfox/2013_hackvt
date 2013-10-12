@@ -2,46 +2,13 @@
   <div class="col-lg-12 col-12">
     <h2>My Bikes</h2>
     <div class="well">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Status</th>
-            <th>Make/Model</th>
-            <th>Color</th>
-            <th>Serial #</th>
-            <th>Description</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tfoot>
-        </tfoot>
-        <tbody>
-          <% @bikes.each do |bike| %>
-          <tr>
-            <td>
-              <%= bike.status %>
-            </td>
-            <td>
-              <%= bike.frame_make %> / <%= bike.frame_model %>
-            </td>
-            <td>
-              <%= bike.color %>
-            </td>
-            <td>
-              <%= bike.serial %>
-            </td>
-            <td>
-              <%= bike.description %>
-            </td>
-            <td>
-              <%= link_to "Update", edit_bike_path(bike), class:"btn btn-xs btn-default" %>
-              <a class="btn btn-xs btn-danger" href="#">Report Missing</a>
-              <%= link_to "Remove", bike_path(bike), class:"btn btn-xs btn-warning", confirm: "Are you sure?", method: :delete%>
-            </td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+      <% if @bikes.size > 0 %>
+        <%= render 'bikes/table' %>
+      <% else %>
+        <h3>Please register a bike!</h3>
+        <p>Uh oh! Looks like you haven't registered a bike yet.  Get started <%= link_to "here", new_bike_path %>.</p>
+
+      <% end %>
     </div>
   </div>
 </div>
