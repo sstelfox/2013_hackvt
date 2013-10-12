@@ -22,6 +22,7 @@ class FoundForm
     bike.attributes = params.slice(:serial, :frame_make, :frame_model, :color, :description)
 
     if valid?
+      bike.status = "found"
       bike.save!
       true
     else
