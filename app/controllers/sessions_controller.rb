@@ -1,4 +1,4 @@
-class SessionController < ApplicationController
+class SessionsController < ApplicationController
   # GET /login
   def new
     redirect_to :root_path if current_user
