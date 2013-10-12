@@ -13,9 +13,9 @@ class IncidentForm
   validate :verify_bike_record
   validate :verify_incident_record
     
- delegate :serial, :frame_make, :frame_model, :color, :description, to: :bike
- delegate :last_seen, :last_location, :police_incident_number, :officer_name,
-   :station, to: :incident
+  delegate :serial, :frame_make, :frame_model, :color, :description, to: :bike
+  delegate :last_seen, :last_location, :police_incident_number, :officer_name,
+    :station, to: :incident
 
   def initialize(bike = nil)
     @bike = bike unless bike.nil?
