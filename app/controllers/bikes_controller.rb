@@ -1,10 +1,13 @@
 class BikesController < ApplicationController
 
   def index
-    # TODO
-    # @bikes = current_user.bikes
+    if current_user
+      @bikes = current_user.bikes
+    else
+      # TODO
+      @bikes = Bike.all
+    end
 
-     @bikes = Bike.all
   end
 
   def new
@@ -15,18 +18,12 @@ class BikesController < ApplicationController
     @bike = Bike.new( bike_params )
     @bike.status = "normal"
 
-    # TODO
-    # @bike.user = current_user
+    @bike.user = current_user
     if @bike.save
       redirect_to bikes_path
     else
       render :new
     end
-  end
-
-  def show
-    @bike = Bike.find(params[:id])
-    #TODO is this __my__ bike?
   end
 
   def edit
