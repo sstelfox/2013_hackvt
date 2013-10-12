@@ -12,6 +12,10 @@ class IncidentForm
 
   validate :verify_bike_record
   validate :verify_incident_record
+
+  def initialize(bike = nil)
+    @bike = bike unless bike.nil?
+  end
   
   def bike
     @bike ||= Bike.new
