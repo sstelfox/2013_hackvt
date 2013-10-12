@@ -1,8 +1,11 @@
 <div class="row">
 	<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-12">
-		<form class="found-new form-horizontal" role="form">
-			<h1>Report a Found Bike</h1>
-			<fieldset class="well">
+		<form class="form-horizontal well">
+			<fieldset>
+				<div class="fieldset-header">
+					<h3>Vital Information</h3>
+					<p>Logging the serial number is the easiest way for us to match the bike with the owner</p>
+				</div>
 				<div class="form-group">
 					<label for="serial-number" class="col-lg-4 control-label">Serial Number</label>
 					<div class="controls col-lg-8">
@@ -11,13 +14,15 @@
 				</div>
 				<img class="img-responsive" src="http://placehold.it/1200x400&text=Where to find serials" alt="Where to find serials">
 			</fieldset>
-			<fieldset class="well">
-				<h4>More information</h4>
+			<fieldset>
+				<div class="fieldset-header">
+					<h3>More information</h3>
+					<p>Some users don't know their serial, so if you can provide more informaiton we have a greater chance of connecting them with the bike you have found!</p>
+				</div>
 				<div class="form-group">
 					<label for="make" class="col-lg-4 control-label">Manufacturer</label>
 					<div class="controls col-lg-8">
 						<input type="text" class="form-control" id="make" name="make" placeholder="e.g. Schwinn/Huffy/Trek">
-						<span class="help-block">Some users don't know their serial, so if you can provide more information we have a greater chance of connecting them with the bike you have found!</span>
 					</div>
 				</div>
 				<div class="form-group">
@@ -27,8 +32,11 @@
 					</div>
 				</div>
 			</fieldset>
-			<fieldset class="well">
-				<h4>Your Contact Information</h4>
+			<fieldset>
+				<div class="fieldset-header">
+					<h3>Your Contact Information</h3>
+					<p>The owner needs to know how to contact you.</p>
+				</div>
 				<div class="form-group">
 					<label for="email" class="col-lg-4 control-label">Email</label>
 					<div class="controls col-lg-8">
@@ -42,7 +50,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<div class="controls col-lg-8">
+					<div class="col-lg-8 col-lg-offset-4">
 						<button type="submit" class="btn btn-primary">Submit</button>
 					</div>
 				</div>
