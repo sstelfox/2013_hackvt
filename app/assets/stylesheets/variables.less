@@ -32,7 +32,7 @@
 // Scaffolding
 // -------------------------
 
-@body-bg:               #fffAf0;
+@body-bg:               #fffaf0;
 @text-color:            @gray-darker;
 
 // Links
@@ -244,7 +244,7 @@
 @navbar-height:                    50px;
 @navbar-margin-bottom:             @line-height-computed;
 @navbar-default-color:             @gray-dark;
-@navbar-default-bg:                #f8f8f8;
+@navbar-default-bg:                @body-bg;
 @navbar-default-border:            darken(@navbar-default-bg, 6.5%);
 @navbar-border-radius:             0;
 @navbar-padding-horizontal:        floor(@grid-gutter-width / 2);
@@ -265,9 +265,9 @@
 @navbar-default-brand-hover-bg:            transparent;
 
 // Navbar toggle
-@navbar-default-toggle-hover-bg:           #ddd;
-@navbar-default-toggle-icon-bar-bg:        #ccc;
-@navbar-default-toggle-border-color:       #ddd;
+@navbar-default-toggle-hover-bg:           darken(@navbar-default-bg,5%);
+@navbar-default-toggle-icon-bar-bg:        darken(@navbar-default-bg,25%);
+@navbar-default-toggle-border-color:       darken(@navbar-default-bg,15%);
 
 
 // Inverted navbar
