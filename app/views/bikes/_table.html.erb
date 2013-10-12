@@ -24,7 +24,9 @@
           <%= bike.color %>
         </td>
         <td>
-          <%= bike.serial %>
+          <% if current_user && (bike.user == current_user || %w{ law_enforcement bike_shop}.include?(current_user.user_type)) %>
+            <%= bike.serial %>
+          <% end%>
         </td>
         <td>
           <%= bike.description %>

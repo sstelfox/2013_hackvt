@@ -17,8 +17,8 @@ class IncidentForm
   delegate :serial, :frame_make, :frame_model, :color, :description, to: :bike
   delegate :last_seen, :last_location, :police_incident_number, :officer_name,
     :station, to: :incident
-  delegate :first_name, :last_name, :email, :password, :password_confirmation,
-    to: :user
+  delegate :first_name, :last_name, :phone, :email, :password,
+    :password_confirmation, to: :user
 
   def initialize(bike = nil, user = nil)
     @bike = bike unless bike.nil?
@@ -42,7 +42,7 @@ class IncidentForm
     incident.attributes = params.slice(:last_location, :police_incident_number, :officer_name, :station)
 
     if user.new_record?
-      user.attributes = params.slice(:first_name, :last_name, :email, :password, :password_confirmation)
+      user.attributes = params.slice(:first_name, :last_name, :phone, :email, :password, :password_confirmation)
     end
 
     unless params[:last_seen] == ""
