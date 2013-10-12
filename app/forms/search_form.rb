@@ -14,10 +14,15 @@ class SearchForm
   end
 
   def submit(params)
-    self.serial = params[:serial]
+    self.query = params[:query]
 
     if valid?
-      Bike.where(serial: serial)
+      search_attrs = %w{  serial frame_make frame_model color }
+      search_string = search_attrs.map {|attr| "#{attr} like ?"}.join(" OR ")
+      search_terms = []
+      search_attrs.length.times { search_terms << "%#{query}%" }
+
+      Bike.where(search_string, *search_terms)
     else
       false
     end

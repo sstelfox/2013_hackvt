@@ -12,6 +12,6 @@ class SearchController < ApplicationController
   private
   def search_form_params
     params.require(:search)
-    params[:search].permit(:serial)
+    params[:search].permit(:query)
   end
 end
