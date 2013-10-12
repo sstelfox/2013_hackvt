@@ -10,6 +10,9 @@ This app was built by:
 * [Gabe Koss](https://github.com/granolocks)
 * [Zach Lincoln](https://github.com/zlincolnBHG)
 
+![screnshot](homepage_snap.png)
+
+
 ## Caveat
 
 This app was build in about 24 hours and is NOT production ready.
