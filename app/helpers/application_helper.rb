@@ -1,11 +1,8 @@
 module ApplicationHelper
-  def authenticate_user
-    unless current_user
-      redirect_to login_path, notice: "You need to login before continuing."
-    end
-  end
-
   def current_user
-    User.find(session[:user_id]) if session[:user_id]
+    return unless session[:user_id]
+    return session[:user_id] = nil unless User.exists?(id: session[:user_id])
+
+    @current_user ||= User.find(session[:user_id]) 
   end
 end
