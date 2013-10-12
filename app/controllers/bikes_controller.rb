@@ -1,13 +1,7 @@
 class BikesController < ApplicationController
 
   def index
-    if current_user
-      @bikes = current_user.bikes
-    else
-      # TODO
-      @bikes = Bike.all
-    end
-
+    @bikes = current_user.bikes
   end
 
   def new
