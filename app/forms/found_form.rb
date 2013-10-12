@@ -16,12 +16,22 @@ class FoundForm
   delegate :serial, :frame_make, :frame_model, :description, to: :bike
   delegate :phone, :email, to: :contact
 
+  def initialize(bike_hash)
+    if bike_hash
+      (@bike = Bike.find_by_hash_id(bike_hash)) && @found = true
+    end
+  end
+
   def bike
     @bike ||= Bike.new
   end
 
   def contact
     @contact ||= Contact.new(bike: bike)
+  end
+
+  def found?
+    @found ||= false
   end
 
   def submit(params)
