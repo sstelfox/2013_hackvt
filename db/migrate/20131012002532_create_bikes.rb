@@ -7,6 +7,9 @@ class CreateBikes < ActiveRecord::Migration
       t.string :size
       t.string :color
       t.string :location_found
+      t.string :status
+      t.text :descriptions
+
       t.references :user
 
       t.timestamps
