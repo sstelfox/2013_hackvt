@@ -32,9 +32,9 @@ The punch list of Long term tasks in order to make it production ready:
 
 ## Other References
 
-* http://www.7dvt.com/2013steal-wheels-would-police-registry-reduce-bike-thefts-burlington
-* http://www.police.ci.burlington.vt.us/LeadinHtml_VtBurlingtonPd/start-report.html
-* http://www.localmotion.org/bikeregistry
-* http://stolenbicycleregistry.com/
-* https://docs.google.com/document/d/1ZBJnq1XuDJ7JaYZj6Kfgsh0evfdNiNxusqmbkOGpIsw/edit?hl=en&authkey=CKnBgNkG
+* [Seven Days Article on Need for VT bike registry](http://www.7dvt.com/2013steal-wheels-would-police-registry-reduce-bike-thefts-burlington)
+* [Burlington Police Report](http://www.police.ci.burlington.vt.us/LeadinHtml_VtBurlingtonPd/start-report.html)
+* [Prior Art: Localmotion Bike Registry (defunct)](http://www.localmotion.org/bikeregistry)
+* [Prior Art: Stolen Bike Registry (defunct)](http://stolenbicycleregistry.com/)
+* [Research Document on This Sort of App](https://docs.google.com/document/d/1ZBJnq1XuDJ7JaYZj6Kfgsh0evfdNiNxusqmbkOGpIsw/edit?hl=en&authkey=CKnBgNkG)
 
