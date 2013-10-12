@@ -1,5 +1,5 @@
 class BikesController < ApplicationController
-  before_action :authenticate_user
+  before_action :authenticate_user, except: [:search, :perform_search]
 
   def index
     @bikes = current_user.bikes
@@ -39,10 +39,6 @@ class BikesController < ApplicationController
     @bike = Bike.find(params[:id])
     @bike.delete
     redirect_to bikes_path
-  end
-
-  def report_stolen
-    # TODO
   end
 
   def search
