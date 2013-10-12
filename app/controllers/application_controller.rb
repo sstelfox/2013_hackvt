@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
 
   include ApplicationHelper
 
-  def authenticate_user
-    unless current_user
+  def authenticate_user(options = {})
+    unless current_user || options.fetch(:except, []).include?(action)
       redirect_to login_path, notice: "You need to login before continuing."
     end
   end

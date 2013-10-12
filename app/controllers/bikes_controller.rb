@@ -1,4 +1,5 @@
 class BikesController < ApplicationController
+  before_action :authenticate_user
 
   def index
     if current_user
@@ -7,7 +8,6 @@ class BikesController < ApplicationController
       # TODO
       @bikes = Bike.all
     end
-
   end
 
   def new
@@ -59,6 +59,7 @@ class BikesController < ApplicationController
   end
 
   private
+
   def bike_params
     params.require(:bike)
     params[:bike].permit(:serial, :frame_make, :frame_model, :color, :description)

@@ -17,6 +17,10 @@ class RegistrationForm
     @user ||= User.new
   end
 
+  def bike
+    @bike ||= Bike.new(user: user)
+  end
+
   def submit(params)
     user.attributes = params.slice(:first_name, :last_name, :email, :password, :password_confirmation)
 
