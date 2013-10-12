@@ -183,6 +183,9 @@ form {
 	h3 {
 		margin-top:0;
 	}
+	ul, ol, ul li, ol li {
+		margin:0;
+	}
 }
 
 // TABLES
@@ -264,34 +267,51 @@ footer {
 	thead{
 		th,td{
 			&.sorting_asc, &.sorting_desc {
-				background-color: @brand-primary;
+				background-color: darken(@body-bg,10%);
 				cursor:pointer;
-				color: white;
 			}
 			&.sorting_asc {
 				.icon:before {
 					content:"\f0de";
-					color: white;
 				}
 			}
 			&.sorting_desc {
 				.icon:before {
 					content:"\f0dd";
-					color: white;
 				}
 			}
 			&.sorting {
 				cursor:pointer;
 				.icon:before {
-					color: #222;
 					content:"\f0dc";
 				}
 			}
 			.icon {
 				font-family:'FontAwesome';
 				font-style:normal;
-				color: #222;
 			}
 		}
 	}
+}
+
+.dataTables_wrapper {
+	table.table {
+		margin-bottom:0 !important;
+	}
+	.row {
+		border:1px solid darken(@body-bg,10%);
+		border-width:1px 0;
+		padding:.75em;
+		margin:0;
+		.pagination {
+			margin:0;
+		}
+	}
+}
+
+.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
+	background-color:darken(@body-bg,15%);
+	border-color:darken(@body-bg,25%);
+	color:@text-color;
+	font-weight:700;
 }
