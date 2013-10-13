@@ -1,5 +1,7 @@
 
 class TransferForm < BaseForm
+  include UserDelegation
+
   def initialize(bike)
     @bike = bike
   end
@@ -7,13 +9,6 @@ class TransferForm < BaseForm
   def bike
     @bike
   end
-
-  def user
-    @user ||= User.new
-  end
-
-  validate :verify_user_record
-  delegate :first_name, :last_name, :email, to: :user
 
   def submit(params)
     @user = User.where(email: params[:email]).first_or_create(params.slice(:first_name, :last_name))
@@ -25,14 +20,6 @@ class TransferForm < BaseForm
       true
     else
       false
-    end
-  end
-
-  def verify_user_record
-    unless user.valid?
-      user.errors.messages.each do |attr, msgs|
-        msgs.each { |m| errors.add(attr, m) }
-      end
     end
   end
 end
