@@ -1,32 +1,34 @@
 
 class PasswordResetForm < BaseForm
-  validate :verify_user_record
-  delegate :email, :password, :password_confirmation, to: :user
+  attr_accessor :email, :password, :password_confirmation
 
-  def user
-    @user ||= User.new
+  validate :email_exists
+  validates_presence_of :email, :password
+  validates_confirmation_of :password
+
+  def email_exists
+    unless email.blank? || User.exists?(email: email)
+      errors.add(:email, "account doesn't exist")
+    end
   end
 
   def submit(params)
-    unless @user = User.where(email: params[:email]).first
-      errors.add(:email, "Email doesn't exist")
-    else
-      user.atttributes = params.slice(:password, :password_confirmation)
-    end
+    self.email = params[:email]
+    self.password = params[:password]
+    self.password_confirmation = params[:password_confirmation]
 
     if valid?
+      user.password = password
+      user.password_confirmation = password_confirmation
       user.save!
+
       true
     else
       false
     end
   end
 
-  def verify_user_record
-    unless user.valid?
-      user.errors.messages.each do |attr, msgs|
-        msgs.each { |m| errors.add(attr, m) }
-      end
-    end
+  def user
+    User.where(email: email).first
   end
 end
