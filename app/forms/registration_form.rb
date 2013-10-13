@@ -1,15 +1,5 @@
 
-class RegistrationForm
-  include ActiveModel::Model
-
-  def persisted?
-    false
-  end
-
-  def self.model_name
-    ActiveModel::Name.new(self, nil, "Registration")
-  end
-
+class RegistrationForm < BaseForm
   delegate :first_name, :last_name, :email, :phone, :password, :password_confirmation, to: :user
   delegate :serial, :frame_make, :frame_model, :color, :description, to: :bike
   validate :verify_user_attributes

@@ -1,17 +1,7 @@
-class SearchForm
-  include ActiveModel::Model
 
+class SearchForm < BaseForm
   attr_accessor :query
-
   validates_presence_of :query
-
-  def persisted?
-    false
-  end
-
-  def self.model_name
-    ActiveModel::Name.new(self, nil, "Search")
-  end
 
   def submit(params)
     self.query = params[:query]
@@ -27,6 +17,5 @@ class SearchForm
       false
     end
   end
-
 end
 

@@ -1,15 +1,5 @@
 
-class IncidentForm
-  include ActiveModel::Model
-
-  def persisted?
-    false
-  end
-
-  def self.model_name
-    ActiveModel::Name.new(self, nil, "Incident")
-  end
-
+class IncidentForm < BaseForm
   validate :verify_bike_record
   validate :verify_incident_record
   validate :verify_user_record

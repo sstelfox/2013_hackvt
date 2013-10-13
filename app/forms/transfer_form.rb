@@ -1,15 +1,5 @@
 
-class TransferForm
-  include ActiveModel::Model
-
-  def persisted?
-    false
-  end
-
-  def self.model_name
-    ActiveModel::Name.new(self, nil, "Transfer")
-  end
-
+class TransferForm < BaseForm
   def initialize(bike)
     @bike = bike
   end

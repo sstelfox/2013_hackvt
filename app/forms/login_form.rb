@@ -1,15 +1,5 @@
 
-class LoginForm
-  include ActiveModel::Model
-
-  def persisted?
-    false
-  end
-
-  def self.model_name
-    ActiveModel::Name.new(self, nil, "Login")
-  end
-
+class LoginForm < BaseForm
   attr_accessor :email, :password
   validate :verify_user_credentials
 

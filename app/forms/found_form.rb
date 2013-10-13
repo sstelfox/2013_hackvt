@@ -1,15 +1,5 @@
 
-class FoundForm
-  include ActiveModel::Model
-
-  def persisted?
-    false
-  end
-
-  def self.model_name
-    ActiveModel::Name.new(self, nil, "Found")
-  end
-
+class FoundForm < BaseForm
   validate :verify_bike_record
   validate :verify_contact_record
 

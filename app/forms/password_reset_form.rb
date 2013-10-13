@@ -1,15 +1,5 @@
 
-class PasswordResetForm
-  include ActiveModel::Model
-
-  def persisted?
-    false
-  end
-
-  def self.model_name
-    ActiveModel::Name.new(self, nil, "PasswordReset")
-  end
-
+class PasswordResetForm < BaseForm
   validate :verify_user_record
   delegate :email, :password, :password_confirmation, to: :user
 
