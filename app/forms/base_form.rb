@@ -2,13 +2,13 @@
 class BaseForm
   include ActiveModel::Model
 
-  def persisted?
-    false
+  def self.model_name
+    class_name = self.name.gsub(/Form$/, '')
+    ActiveModel::Name.new(self, nil, class_name)
   end
 
-  def self.model_name
-    class_name = self.class.to_s.gsub(/Form$/, '')
-    ActiveModel::Name.new(self, nil, class_name)
+  def persisted?
+    false
   end
 end
 
