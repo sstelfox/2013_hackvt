@@ -10,8 +10,9 @@ class RegistrationForm < BaseForm
   end
 
   def submit(params)
-    user.attributes = params.slice(:first_name, :last_name, :email, :phone,
-                                   :password, :password_confirmation)
+    user.attributes = params.slice(:first_name, :last_name, :email, :phone)
+    user.password = params[:password]
+    user.password_confirmation = params[:password_confirmation]
 
     bike.attributes = params.slice(:serial, :frame_make, :frame_model, :color,
                                    :description)
