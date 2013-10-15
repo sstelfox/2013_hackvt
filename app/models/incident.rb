@@ -3,5 +3,5 @@ class Incident < ActiveRecord::Base
   validates_presence_of :last_seen, :last_location, :bike
 
   geocoded_by :last_location
-  after_validation :geocode, unless: lambda { |i| i.geocoded? }
+  after_validation :geocode, unless: lambda { |u| u.last_location_changed? || u.geocoded? }
 end
