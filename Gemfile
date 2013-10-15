@@ -17,6 +17,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'rqrcode'
+gem 'scrypt'
 gem 'geocoder'
 
 group :doc do

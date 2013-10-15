@@ -8,12 +8,28 @@ class User < ActiveRecord::Base
   has_many :bikes
 
   # TODO Email validation
-  # TODO add password hashing
-  #
   # TODO check user_type of for law_enforcement or bike_shop
 
   def self.authenticate(email, password)
-    where(email: email, password: password).first
+    user = where(email: email).first
+
+    return nil unless user
+    return nil unless user.check_password(password)
+
+    user
+  end
+
+  def check_password(pass)
+    password == pass
+  end
+
+  def password
+    SCrypt::Password.new(self[:password]) if self[:password]
+  end
+
+  def password=(pass)
+    @password = pass
+    self[:password] = SCrypt::Password.create(pass)
   end
 end
 
