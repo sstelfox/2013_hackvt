@@ -14,6 +14,9 @@ BikeReports::Application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   delete '/logout', to: 'sessions#destroy'
 
+  get '/reset_password', to: 'password_resets#new', as: :reset_password
+  post '/reset_password', to: 'password_resets#create'
+
   get '/report_stolen', to: 'incidents#new', as: :report_stolen
   post '/report_stolen', to: 'incidents#create'
 

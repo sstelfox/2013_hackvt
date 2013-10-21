@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :phone
       t.string :password
       t.string :user_type
+      t.string :role, null: false, default: 'user'
 
       t.timestamps
     end

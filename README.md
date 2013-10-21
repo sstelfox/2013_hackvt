@@ -1,4 +1,4 @@
-# Safes Spokes VT
+# Safe Spokes VT
 
 Safe Spokes VT is a proof of concept bike registration tool built by Team
 Wintermute during the [Hack VT 2013](http://hackvt.com) hackathon. 

@@ -1,15 +1,5 @@
 
-class FoundForm
-  include ActiveModel::Model
-
-  def persisted?
-    false
-  end
-
-  def self.model_name
-    ActiveModel::Name.new(self, nil, "Found")
-  end
-
+class FoundForm < BaseForm
   validate :verify_bike_record
   validate :verify_contact_record
 
@@ -35,7 +25,7 @@ class FoundForm
   end
 
   def submit(params)
-    bike.attributes = Contact.where(serial: serial).first_or_create(params.slice(:serial, :frame_make, :frame_model, :description))
+    bike.attributes = params.slice(:serial, :frame_make, :frame_model, :description)
     contact.attributes = params.slice(:phone, :email)
 
     if valid?

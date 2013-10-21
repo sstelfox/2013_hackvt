@@ -1,30 +1,21 @@
 
-class RegistrationForm
-  include ActiveModel::Model
+class RegistrationForm < BaseForm
+  include UserDelegation
 
-  def persisted?
-    false
-  end
-
-  def self.model_name
-    ActiveModel::Name.new(self, nil, "Registration")
-  end
-
-  delegate :first_name, :last_name, :email, :phone, :password, :password_confirmation, to: :user
+  delegate :password, :password_confirmation, to: :user
   delegate :serial, :frame_make, :frame_model, :color, :description, to: :bike
-  validate :verify_user_attributes
-
-  def user
-    @user ||= User.new
-  end
 
   def bike
     @bike ||= Bike.new(user: user)
   end
 
   def submit(params)
-    user.attributes = params.slice(:first_name, :last_name, :email, :phone, :password, :password_confirmation)
-    bike.attributes = params.slice(:serial, :frame_make, :frame_model, :color, :description)
+    user.attributes = params.slice(:first_name, :last_name, :email, :phone)
+    user.password = params[:password]
+    user.password_confirmation = params[:password_confirmation]
+
+    bike.attributes = params.slice(:serial, :frame_make, :frame_model, :color,
+                                   :description)
 
     if valid?
       user.save!
@@ -32,14 +23,6 @@ class RegistrationForm
       true
     else
       false
-    end
-  end
-
-  def verify_user_attributes
-    unless user.valid?
-      user.errors.messages.each do |attr, msgs|
-        msgs.each { |m| errors.add(attr, m) }
-      end
     end
   end
 

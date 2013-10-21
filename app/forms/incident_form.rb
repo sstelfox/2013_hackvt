@@ -1,24 +1,14 @@
 
-class IncidentForm
-  include ActiveModel::Model
-
-  def persisted?
-    false
-  end
-
-  def self.model_name
-    ActiveModel::Name.new(self, nil, "Incident")
-  end
+class IncidentForm < BaseForm
+  include UserDelegation
 
   validate :verify_bike_record
   validate :verify_incident_record
-  validate :verify_user_record
 
   delegate :serial, :frame_make, :frame_model, :color, :description, to: :bike
   delegate :last_seen, :last_location, :police_incident_number, :officer_name,
     :station, to: :incident
-  delegate :first_name, :last_name, :phone, :email, :password,
-    :password_confirmation, to: :user
+  delegate :password, :password_confirmation, to: :user
 
   def initialize(bike = nil, user = nil)
     @bike = bike unless bike.nil?
@@ -31,10 +21,6 @@ class IncidentForm
 
   def incident
     @incident ||= Incident.new(bike: bike)
-  end
-
-  def user
-    @user ||= User.new
   end
 
   def submit(params)
@@ -71,14 +57,6 @@ class IncidentForm
   def verify_incident_record
     unless incident.valid?
       incident.errors.messages.each do |attr, msgs|
-        msgs.each { |m| errors.add(attr, m) }
-      end
-    end
-  end
-
-  def verify_user_record
-    unless user.valid?
-      user.errors.messages.each do |attr, msgs|
         msgs.each { |m| errors.add(attr, m) }
       end
     end
